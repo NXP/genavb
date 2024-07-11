@@ -1,0 +1,8 @@
+genavb_set_option(CONFIG_GPTP OFF)
+genavb_set_option(CONFIG_SRP ON)
+genavb_set_option(CONFIG_MANAGEMENT ON)
+genavb_set_option(CONFIG_API ON)
+genavb_set_option(CONFIG_APPS ON)
+genavb_set_option(CONFIG_SOCKET ON)
+genavb_set_option(CONFIG_HSR ON)
+genavb_set_option(CONFIG_DSA ON)

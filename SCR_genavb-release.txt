@@ -1,0 +1,47 @@
+NXP Software Content Register
+
+Release Name:           genavb-sdk
+Version:                GenAVB/TSN 6_2_0
+Date Created:           July-2024
+Release Location:       https://github.com/NXP/GenAVB_TSN
+Description:            GenAVB/TSN protocol stack for NXP MPUs and MCUs processors
+Origin:                 NXP (BSD-3-Clause)
+                        NXP (GPL-2.0-or-later)
+                        NXP (CC0-1.0)
+                        xoroshiro generator - David Blackman and Sebastiano Vigna (vigna@acm.org) (CC0-1.0) - https://prng.di.unimi.it/xoroshiro64starstar.c
+
+----------------------------------------
+
+Package:                        api
+                                apps
+                                avdecc
+                                avtp
+                                common
+                                configs
+                                gptp
+                                hsr
+                                include
+                                linux
+                                maap
+                                management
+                                os
+                                public
+                                rtos
+                                srp
+Outgoing License:               BSD-3-Clause
+License File:                   licenses/BSD-3-Clause
+Package Category:               GenAVB/TSN Stack and Applications
+Description and comments:       GenAVB/TSN stack with example applications
+Type of content:                Source code
+Description and comments:       GenAVB/TSN library
+Origin:                         NXP (BSD-3-Clause)
+                                NXP (CC0-1.0)
+                                xoroshiro generator - David Blackman and Sebastiano Vigna (vigna@acm.org) (CC0-1.0) - https://prng.di.unimi.it/xoroshiro64starstar.c
+
+Package:                        linux/modules
+Outgoing License:               GPL-2.0-or-later
+License File:                   licenses/COPYING
+Package Category:               GenAVB/TSN Stack
+Description and comments:       Linux modules driver for GenAVB/TSN stack
+Type of content:                Source code
+Origin:                         NXP (GPL-2.0-or-later)

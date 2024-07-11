@@ -1,0 +1,3331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UANodeSet xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" LastModified="2019-04-01T00:00:00Z" xmlns="http://opcfoundation.org/UA/2011/03/UANodeSet.xsd">
+  <NamespaceUris>
+    <Uri>https://opcua/UA/Tsn/</Uri>
+  </NamespaceUris>
+  <Models>
+    <Model ModelUri="https://opcua/UA/Tsn/" Version="0.9.0" PublicationDate="2019-04-01T00:00:00Z">
+      <RequiredModel ModelUri="http://opcfoundation.org/UA/" Version="1.03" PublicationDate="2013-12-02T00:00:00Z" />
+    </Model>
+  </Models>
+  <Aliases>
+    <Alias Alias="Boolean">i=1</Alias>
+    <Alias Alias="SByte">i=2</Alias>
+    <Alias Alias="Byte">i=3</Alias>
+    <Alias Alias="Int16">i=4</Alias>
+    <Alias Alias="UInt16">i=5</Alias>
+    <Alias Alias="Int32">i=6</Alias>
+    <Alias Alias="UInt32">i=7</Alias>
+    <Alias Alias="Int64">i=8</Alias>
+    <Alias Alias="UInt64">i=9</Alias>
+    <Alias Alias="Float">i=10</Alias>
+    <Alias Alias="Double">i=11</Alias>
+    <Alias Alias="DateTime">i=13</Alias>
+    <Alias Alias="String">i=12</Alias>
+    <Alias Alias="ByteString">i=15</Alias>
+    <Alias Alias="Guid">i=14</Alias>
+    <Alias Alias="XmlElement">i=16</Alias>
+    <Alias Alias="NodeId">i=17</Alias>
+    <Alias Alias="ExpandedNodeId">i=18</Alias>
+    <Alias Alias="QualifiedName">i=20</Alias>
+    <Alias Alias="LocalizedText">i=21</Alias>
+    <Alias Alias="StatusCode">i=19</Alias>
+    <Alias Alias="Structure">i=22</Alias>
+    <Alias Alias="Number">i=26</Alias>
+    <Alias Alias="Integer">i=27</Alias>
+    <Alias Alias="UInteger">i=28</Alias>
+    <Alias Alias="HasComponent">i=47</Alias>
+    <Alias Alias="HasProperty">i=46</Alias>
+    <Alias Alias="Organizes">i=35</Alias>
+    <Alias Alias="HasEventSource">i=36</Alias>
+    <Alias Alias="HasNotifier">i=48</Alias>
+    <Alias Alias="HasSubtype">i=45</Alias>
+    <Alias Alias="HasTypeDefinition">i=40</Alias>
+    <Alias Alias="HasModellingRule">i=37</Alias>
+    <Alias Alias="HasEncoding">i=38</Alias>
+    <Alias Alias="HasDescription">i=39</Alias>
+  </Aliases>
+  <UAObjectType NodeId="ns=1;i=15001" BrowseName="1:StatsType">
+    <DisplayName>StatsType</DisplayName>
+    <Description>Base type for all statistics</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15002</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15003</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15004</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15005</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15006</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15007</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15008</Reference>
+      <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
+    </References>
+  </UAObjectType>
+  <UAVariable NodeId="ns=1;i=15002" BrowseName="1:Min" ParentNodeId="ns=1;i=15001" DataType="Int32">
+    <DisplayName>Min</DisplayName>
+    <Description>Minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15001</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15003" BrowseName="1:Mean" ParentNodeId="ns=1;i=15001" DataType="Int32">
+    <DisplayName>Mean</DisplayName>
+    <Description>Mean of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15001</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15004" BrowseName="1:Max" ParentNodeId="ns=1;i=15001" DataType="Int32">
+    <DisplayName>Max</DisplayName>
+    <Description>Maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15001</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15005" BrowseName="1:AbsMax" ParentNodeId="ns=1;i=15001" DataType="Int32">
+    <DisplayName>AbsMax</DisplayName>
+    <Description>Absolute maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15001</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15006" BrowseName="1:AbsMin" ParentNodeId="ns=1;i=15001" DataType="Int32">
+    <DisplayName>AbsMin</DisplayName>
+    <Description>Absolute minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15001</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15007" BrowseName="1:Ms" ParentNodeId="ns=1;i=15001" DataType="UInt64">
+    <DisplayName>Ms</DisplayName>
+    <Description>Mean square of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15001</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15008" BrowseName="1:Variance" ParentNodeId="ns=1;i=15001" DataType="UInt64">
+    <DisplayName>Variance</DisplayName>
+    <Description>Variance of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15001</Reference>
+    </References>
+  </UAVariable>
+  <UAObjectType NodeId="ns=1;i=15009" BrowseName="1:HistogramType">
+    <DisplayName>HistogramType</DisplayName>
+    <Description>Base type for all histograms</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15010</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15011</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15012</Reference>
+      <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
+    </References>
+  </UAObjectType>
+  <UAVariable NodeId="ns=1;i=15010" BrowseName="1:NSlots" ParentNodeId="ns=1;i=15009" DataType="UInt32">
+    <DisplayName>NSlots</DisplayName>
+    <Description>Number of slots</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15009</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15011" BrowseName="1:SlotSize" ParentNodeId="ns=1;i=15009" DataType="UInt32">
+    <DisplayName>SlotSize</DisplayName>
+    <Description>Slot size</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15009</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15012" BrowseName="1:Slots" ParentNodeId="ns=1;i=15009" DataType="UInt32" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>Slots</DisplayName>
+    <Description>Array for the repartition of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15009</Reference>
+    </References>
+  </UAVariable>
+  <UAObjectType NodeId="ns=1;i=15013" BrowseName="1:ConfigurationType">
+    <DisplayName>ConfigurationType</DisplayName>
+    <Description>Base type for the app configuration</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=15014</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=15015</Reference>
+      <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
+    </References>
+  </UAObjectType>
+  <UAVariable NodeId="ns=1;i=15014" BrowseName="1:Role" ParentNodeId="ns=1;i=15013" DataType="String">
+    <DisplayName>Role</DisplayName>
+    <Description>Role of the endpoint : controller or io_device</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15013</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15015" BrowseName="1:NumPeers" ParentNodeId="ns=1;i=15013" DataType="UInt64">
+    <DisplayName>NumPeers</DisplayName>
+    <Description>Number of peers</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15013</Reference>
+    </References>
+  </UAVariable>
+  <UAObjectType NodeId="ns=1;i=15016" BrowseName="1:TaskStatsType">
+    <DisplayName>TaskStatsType</DisplayName>
+    <Description>Statistics of the task</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15017</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15018</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15019</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15020</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15021</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15022</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15023</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15024</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15032</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15036</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15044</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15048</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15056</Reference>
+      <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
+    </References>
+  </UAObjectType>
+  <UAVariable NodeId="ns=1;i=15017" BrowseName="1:Sched" ParentNodeId="ns=1;i=15016" DataType="UInt32">
+    <DisplayName>Sched</DisplayName>
+    <Description>Sched</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15016</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15018" BrowseName="1:SchedEarly" ParentNodeId="ns=1;i=15016" DataType="UInt32">
+    <DisplayName>SchedEarly</DisplayName>
+    <Description>SchedEarly</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15016</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15019" BrowseName="1:SchedLate" ParentNodeId="ns=1;i=15016" DataType="UInt32">
+    <DisplayName>SchedLate</DisplayName>
+    <Description>SchedLate</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15016</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15020" BrowseName="1:SchedMissed" ParentNodeId="ns=1;i=15016" DataType="UInt32">
+    <DisplayName>SchedMissed</DisplayName>
+    <Description>SchedMissed</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15016</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15021" BrowseName="1:SchedTimeout" ParentNodeId="ns=1;i=15016" DataType="UInt32">
+    <DisplayName>SchedTimeout</DisplayName>
+    <Description>SchedTimeout</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15016</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15022" BrowseName="1:ClockDiscount" ParentNodeId="ns=1;i=15016" DataType="UInt32">
+    <DisplayName>ClockDiscount</DisplayName>
+    <Description>ClockDiscount</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15016</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15023" BrowseName="1:ClockErr" ParentNodeId="ns=1;i=15016" DataType="UInt32">
+    <DisplayName>ClockErr</DisplayName>
+    <Description>ClockErr</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15016</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15024" BrowseName="1:SchedErrStats" ParentNodeId="ns=1;i=15016">
+    <DisplayName>SchedErrStats</DisplayName>
+    <Description>SchedErrStats</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15025</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15026</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15027</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15028</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15029</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15030</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15031</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15001</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15016</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15025" BrowseName="1:Min" ParentNodeId="ns=1;i=15024" DataType="Int32">
+    <DisplayName>Min</DisplayName>
+    <Description>Minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15024</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15026" BrowseName="1:Mean" ParentNodeId="ns=1;i=15024" DataType="Int32">
+    <DisplayName>Mean</DisplayName>
+    <Description>Mean of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15024</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15027" BrowseName="1:Max" ParentNodeId="ns=1;i=15024" DataType="Int32">
+    <DisplayName>Max</DisplayName>
+    <Description>Maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15024</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15028" BrowseName="1:AbsMax" ParentNodeId="ns=1;i=15024" DataType="Int32">
+    <DisplayName>AbsMax</DisplayName>
+    <Description>Absolute maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15024</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15029" BrowseName="1:AbsMin" ParentNodeId="ns=1;i=15024" DataType="Int32">
+    <DisplayName>AbsMin</DisplayName>
+    <Description>Absolute minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15024</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15030" BrowseName="1:Ms" ParentNodeId="ns=1;i=15024" DataType="UInt64">
+    <DisplayName>Ms</DisplayName>
+    <Description>Mean square of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15024</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15031" BrowseName="1:Variance" ParentNodeId="ns=1;i=15024" DataType="UInt64">
+    <DisplayName>Variance</DisplayName>
+    <Description>Variance of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15024</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15032" BrowseName="1:SchedErrHisto" ParentNodeId="ns=1;i=15016">
+    <DisplayName>SchedErrHisto</DisplayName>
+    <Description>SchedErrHisto</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15033</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15034</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15035</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15009</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15016</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15033" BrowseName="1:NSlots" ParentNodeId="ns=1;i=15032" DataType="UInt32">
+    <DisplayName>NSlots</DisplayName>
+    <Description>Number of slots</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15032</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15034" BrowseName="1:SlotSize" ParentNodeId="ns=1;i=15032" DataType="UInt32">
+    <DisplayName>SlotSize</DisplayName>
+    <Description>Slot size</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15032</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15035" BrowseName="1:Slots" ParentNodeId="ns=1;i=15032" DataType="UInt32" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>Slots</DisplayName>
+    <Description>Array for the repartition of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15032</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15036" BrowseName="1:ProcTimeStats" ParentNodeId="ns=1;i=15016">
+    <DisplayName>ProcTimeStats</DisplayName>
+    <Description>Processing time statistics</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15037</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15038</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15039</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15040</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15041</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15042</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15043</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15001</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15016</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15037" BrowseName="1:Min" ParentNodeId="ns=1;i=15036" DataType="Int32">
+    <DisplayName>Min</DisplayName>
+    <Description>Minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15036</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15038" BrowseName="1:Mean" ParentNodeId="ns=1;i=15036" DataType="Int32">
+    <DisplayName>Mean</DisplayName>
+    <Description>Mean of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15036</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15039" BrowseName="1:Max" ParentNodeId="ns=1;i=15036" DataType="Int32">
+    <DisplayName>Max</DisplayName>
+    <Description>Maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15036</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15040" BrowseName="1:AbsMax" ParentNodeId="ns=1;i=15036" DataType="Int32">
+    <DisplayName>AbsMax</DisplayName>
+    <Description>Absolute maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15036</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15041" BrowseName="1:AbsMin" ParentNodeId="ns=1;i=15036" DataType="Int32">
+    <DisplayName>AbsMin</DisplayName>
+    <Description>Absolute minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15036</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15042" BrowseName="1:Ms" ParentNodeId="ns=1;i=15036" DataType="UInt64">
+    <DisplayName>Ms</DisplayName>
+    <Description>Mean square of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15036</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15043" BrowseName="1:Variance" ParentNodeId="ns=1;i=15036" DataType="UInt64">
+    <DisplayName>Variance</DisplayName>
+    <Description>Variance of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15036</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15044" BrowseName="1:ProcTimeHisto" ParentNodeId="ns=1;i=15016">
+    <DisplayName>ProcTimeHisto</DisplayName>
+    <Description>Processing time histogram</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15045</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15046</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15047</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15009</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15016</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15045" BrowseName="1:NSlots" ParentNodeId="ns=1;i=15044" DataType="UInt32">
+    <DisplayName>NSlots</DisplayName>
+    <Description>Number of slots</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15044</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15046" BrowseName="1:SlotSize" ParentNodeId="ns=1;i=15044" DataType="UInt32">
+    <DisplayName>SlotSize</DisplayName>
+    <Description>Slot size</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15044</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15047" BrowseName="1:Slots" ParentNodeId="ns=1;i=15044" DataType="UInt32" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>Slots</DisplayName>
+    <Description>Array for the repartition of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15044</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15048" BrowseName="1:TotalTimeStats" ParentNodeId="ns=1;i=15016">
+    <DisplayName>TotalTimeStats</DisplayName>
+    <Description>Total time statistics</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15049</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15050</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15051</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15052</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15053</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15054</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15055</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15001</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15016</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15049" BrowseName="1:Min" ParentNodeId="ns=1;i=15048" DataType="Int32">
+    <DisplayName>Min</DisplayName>
+    <Description>Minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15048</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15050" BrowseName="1:Mean" ParentNodeId="ns=1;i=15048" DataType="Int32">
+    <DisplayName>Mean</DisplayName>
+    <Description>Mean of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15048</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15051" BrowseName="1:Max" ParentNodeId="ns=1;i=15048" DataType="Int32">
+    <DisplayName>Max</DisplayName>
+    <Description>Maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15048</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15052" BrowseName="1:AbsMax" ParentNodeId="ns=1;i=15048" DataType="Int32">
+    <DisplayName>AbsMax</DisplayName>
+    <Description>Absolute maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15048</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15053" BrowseName="1:AbsMin" ParentNodeId="ns=1;i=15048" DataType="Int32">
+    <DisplayName>AbsMin</DisplayName>
+    <Description>Absolute minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15048</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15054" BrowseName="1:Ms" ParentNodeId="ns=1;i=15048" DataType="UInt64">
+    <DisplayName>Ms</DisplayName>
+    <Description>Mean square of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15048</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15055" BrowseName="1:Variance" ParentNodeId="ns=1;i=15048" DataType="UInt64">
+    <DisplayName>Variance</DisplayName>
+    <Description>Variance of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15048</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15056" BrowseName="1:TotalTimeHisto" ParentNodeId="ns=1;i=15016">
+    <DisplayName>TotalTimeHisto</DisplayName>
+    <Description>Total time histogram</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15057</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15058</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15059</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15009</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15016</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15057" BrowseName="1:NSlots" ParentNodeId="ns=1;i=15056" DataType="UInt32">
+    <DisplayName>NSlots</DisplayName>
+    <Description>Number of slots</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15056</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15058" BrowseName="1:SlotSize" ParentNodeId="ns=1;i=15056" DataType="UInt32">
+    <DisplayName>SlotSize</DisplayName>
+    <Description>Slot size</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15056</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15059" BrowseName="1:Slots" ParentNodeId="ns=1;i=15056" DataType="UInt32" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>Slots</DisplayName>
+    <Description>Array for the repartition of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15056</Reference>
+    </References>
+  </UAVariable>
+  <UAObjectType NodeId="ns=1;i=15060" BrowseName="1:CyclicRxSocketType">
+    <DisplayName>CyclicRxSocketType</DisplayName>
+    <Description>Application level socket</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15061</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15062</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15063</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15064</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15065</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15066</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15067</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15075</Reference>
+      <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
+    </References>
+  </UAObjectType>
+  <UAVariable NodeId="ns=1;i=15061" BrowseName="1:PeerId" ParentNodeId="ns=1;i=15060" DataType="Int32">
+    <DisplayName>PeerId</DisplayName>
+    <Description>Peer identifier</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15060</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15062" BrowseName="1:ValidFrames" ParentNodeId="ns=1;i=15060" DataType="UInt32">
+    <DisplayName>ValidFrames</DisplayName>
+    <Description>Number of valid frames</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15060</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15063" BrowseName="1:ErrId" ParentNodeId="ns=1;i=15060" DataType="UInt32">
+    <DisplayName>ErrId</DisplayName>
+    <Description>Error parameter</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15060</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15064" BrowseName="1:ErrTs" ParentNodeId="ns=1;i=15060" DataType="UInt32">
+    <DisplayName>ErrTs</DisplayName>
+    <Description>Error parameter</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15060</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15065" BrowseName="1:ErrUnderflow" ParentNodeId="ns=1;i=15060" DataType="UInt32">
+    <DisplayName>ErrUnderflow</DisplayName>
+    <Description>Error parameter</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15060</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15066" BrowseName="1:Link" ParentNodeId="ns=1;i=15060" DataType="String">
+    <DisplayName>Link</DisplayName>
+    <Description>Link up or down</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15060</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15067" BrowseName="1:TrafficLatencyStats" ParentNodeId="ns=1;i=15060">
+    <DisplayName>TrafficLatencyStats</DisplayName>
+    <Description>Traffic latency statistics</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15068</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15069</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15070</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15071</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15072</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15073</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15074</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15001</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15060</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15068" BrowseName="1:Min" ParentNodeId="ns=1;i=15067" DataType="Int32">
+    <DisplayName>Min</DisplayName>
+    <Description>Minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15067</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15069" BrowseName="1:Mean" ParentNodeId="ns=1;i=15067" DataType="Int32">
+    <DisplayName>Mean</DisplayName>
+    <Description>Mean of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15067</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15070" BrowseName="1:Max" ParentNodeId="ns=1;i=15067" DataType="Int32">
+    <DisplayName>Max</DisplayName>
+    <Description>Maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15067</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15071" BrowseName="1:AbsMax" ParentNodeId="ns=1;i=15067" DataType="Int32">
+    <DisplayName>AbsMax</DisplayName>
+    <Description>Absolute maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15067</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15072" BrowseName="1:AbsMin" ParentNodeId="ns=1;i=15067" DataType="Int32">
+    <DisplayName>AbsMin</DisplayName>
+    <Description>Absolute minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15067</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15073" BrowseName="1:Ms" ParentNodeId="ns=1;i=15067" DataType="UInt64">
+    <DisplayName>Ms</DisplayName>
+    <Description>Mean square of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15067</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15074" BrowseName="1:Variance" ParentNodeId="ns=1;i=15067" DataType="UInt64">
+    <DisplayName>Variance</DisplayName>
+    <Description>Variance of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15067</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15075" BrowseName="1:TrafficLatencyHisto" ParentNodeId="ns=1;i=15060">
+    <DisplayName>TrafficLatencyHisto</DisplayName>
+    <Description>Traffic latency histogram</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15076</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15077</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15078</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15009</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15060</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15076" BrowseName="1:NSlots" ParentNodeId="ns=1;i=15075" DataType="UInt32">
+    <DisplayName>NSlots</DisplayName>
+    <Description>Number of slots</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15075</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15077" BrowseName="1:SlotSize" ParentNodeId="ns=1;i=15075" DataType="UInt32">
+    <DisplayName>SlotSize</DisplayName>
+    <Description>Slot size</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15075</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15078" BrowseName="1:Slots" ParentNodeId="ns=1;i=15075" DataType="UInt32" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>Slots</DisplayName>
+    <Description>Array for the repartition of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15075</Reference>
+    </References>
+  </UAVariable>
+  <UAObjectType NodeId="ns=1;i=15079" BrowseName="1:NetworkSocketType">
+    <DisplayName>NetworkSocketType</DisplayName>
+    <Description>Frames from low-level network socket</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15080</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15081</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15082</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15083</Reference>
+      <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
+    </References>
+  </UAObjectType>
+  <UAVariable NodeId="ns=1;i=15080" BrowseName="1:Direction" ParentNodeId="ns=1;i=15079" DataType="String">
+    <DisplayName>Direction</DisplayName>
+    <Description>Rx or tx</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15079</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15081" BrowseName="1:Id" ParentNodeId="ns=1;i=15079" DataType="Int32">
+    <DisplayName>Id</DisplayName>
+    <Description>Identifier</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15079</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15082" BrowseName="1:Frames" ParentNodeId="ns=1;i=15079" DataType="UInt32">
+    <DisplayName>Frames</DisplayName>
+    <Description>Frames number</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15079</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15083" BrowseName="1:FramesErr" ParentNodeId="ns=1;i=15079" DataType="UInt32">
+    <DisplayName>FramesErr</DisplayName>
+    <Description>Frames errors number</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15079</Reference>
+    </References>
+  </UAVariable>
+  <UAObjectType NodeId="ns=1;i=15084" BrowseName="1:SocketStatsType">
+    <DisplayName>SocketStatsType</DisplayName>
+    <Description>Base type for all the sockets</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15085</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15104</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15123</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15128</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15133</Reference>
+      <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
+    </References>
+  </UAObjectType>
+  <UAObject NodeId="ns=1;i=15085" BrowseName="1:CyclicRxSocket0" ParentNodeId="ns=1;i=15084">
+    <DisplayName>CyclicRxSocket0</DisplayName>
+    <Description>CyclicRxSocket0</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15086</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15087</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15088</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15089</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15090</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15091</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15092</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15100</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15060</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15084</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15086" BrowseName="1:PeerId" ParentNodeId="ns=1;i=15085" DataType="Int32">
+    <DisplayName>PeerId</DisplayName>
+    <Description>Peer identifier</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15085</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15087" BrowseName="1:ValidFrames" ParentNodeId="ns=1;i=15085" DataType="UInt32">
+    <DisplayName>ValidFrames</DisplayName>
+    <Description>Number of valid frames</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15085</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15088" BrowseName="1:ErrId" ParentNodeId="ns=1;i=15085" DataType="UInt32">
+    <DisplayName>ErrId</DisplayName>
+    <Description>Error parameter</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15085</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15089" BrowseName="1:ErrTs" ParentNodeId="ns=1;i=15085" DataType="UInt32">
+    <DisplayName>ErrTs</DisplayName>
+    <Description>Error parameter</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15085</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15090" BrowseName="1:ErrUnderflow" ParentNodeId="ns=1;i=15085" DataType="UInt32">
+    <DisplayName>ErrUnderflow</DisplayName>
+    <Description>Error parameter</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15085</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15091" BrowseName="1:Link" ParentNodeId="ns=1;i=15085" DataType="String">
+    <DisplayName>Link</DisplayName>
+    <Description>Link up or down</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15085</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15092" BrowseName="1:TrafficLatencyStats" ParentNodeId="ns=1;i=15085">
+    <DisplayName>TrafficLatencyStats</DisplayName>
+    <Description>Traffic latency statistics</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15093</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15094</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15095</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15096</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15097</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15098</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15099</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15001</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15085</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15093" BrowseName="1:Min" ParentNodeId="ns=1;i=15092" DataType="Int32">
+    <DisplayName>Min</DisplayName>
+    <Description>Minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15092</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15094" BrowseName="1:Mean" ParentNodeId="ns=1;i=15092" DataType="Int32">
+    <DisplayName>Mean</DisplayName>
+    <Description>Mean of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15092</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15095" BrowseName="1:Max" ParentNodeId="ns=1;i=15092" DataType="Int32">
+    <DisplayName>Max</DisplayName>
+    <Description>Maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15092</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15096" BrowseName="1:AbsMax" ParentNodeId="ns=1;i=15092" DataType="Int32">
+    <DisplayName>AbsMax</DisplayName>
+    <Description>Absolute maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15092</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15097" BrowseName="1:AbsMin" ParentNodeId="ns=1;i=15092" DataType="Int32">
+    <DisplayName>AbsMin</DisplayName>
+    <Description>Absolute minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15092</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15098" BrowseName="1:Ms" ParentNodeId="ns=1;i=15092" DataType="UInt64">
+    <DisplayName>Ms</DisplayName>
+    <Description>Mean square of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15092</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15099" BrowseName="1:Variance" ParentNodeId="ns=1;i=15092" DataType="UInt64">
+    <DisplayName>Variance</DisplayName>
+    <Description>Variance of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15092</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15100" BrowseName="1:TrafficLatencyHisto" ParentNodeId="ns=1;i=15085">
+    <DisplayName>TrafficLatencyHisto</DisplayName>
+    <Description>Traffic latency histogram</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15101</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15102</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15103</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15009</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15085</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15101" BrowseName="1:NSlots" ParentNodeId="ns=1;i=15100" DataType="UInt32">
+    <DisplayName>NSlots</DisplayName>
+    <Description>Number of slots</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15100</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15102" BrowseName="1:SlotSize" ParentNodeId="ns=1;i=15100" DataType="UInt32">
+    <DisplayName>SlotSize</DisplayName>
+    <Description>Slot size</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15100</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15103" BrowseName="1:Slots" ParentNodeId="ns=1;i=15100" DataType="UInt32" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>Slots</DisplayName>
+    <Description>Array for the repartition of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15100</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15104" BrowseName="1:CyclicRxSocket1" ParentNodeId="ns=1;i=15084">
+    <DisplayName>CyclicRxSocket1</DisplayName>
+    <Description>CyclicRxSocket1</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15105</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15106</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15107</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15108</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15109</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15110</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15111</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15119</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15060</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15084</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15105" BrowseName="1:PeerId" ParentNodeId="ns=1;i=15104" DataType="Int32">
+    <DisplayName>PeerId</DisplayName>
+    <Description>Peer identifier</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15104</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15106" BrowseName="1:ValidFrames" ParentNodeId="ns=1;i=15104" DataType="UInt32">
+    <DisplayName>ValidFrames</DisplayName>
+    <Description>Number of valid frames</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15104</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15107" BrowseName="1:ErrId" ParentNodeId="ns=1;i=15104" DataType="UInt32">
+    <DisplayName>ErrId</DisplayName>
+    <Description>Error parameter</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15104</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15108" BrowseName="1:ErrTs" ParentNodeId="ns=1;i=15104" DataType="UInt32">
+    <DisplayName>ErrTs</DisplayName>
+    <Description>Error parameter</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15104</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15109" BrowseName="1:ErrUnderflow" ParentNodeId="ns=1;i=15104" DataType="UInt32">
+    <DisplayName>ErrUnderflow</DisplayName>
+    <Description>Error parameter</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15104</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15110" BrowseName="1:Link" ParentNodeId="ns=1;i=15104" DataType="String">
+    <DisplayName>Link</DisplayName>
+    <Description>Link up or down</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15104</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15111" BrowseName="1:TrafficLatencyStats" ParentNodeId="ns=1;i=15104">
+    <DisplayName>TrafficLatencyStats</DisplayName>
+    <Description>Traffic latency statistics</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15112</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15113</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15114</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15115</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15116</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15117</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15118</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15001</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15104</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15112" BrowseName="1:Min" ParentNodeId="ns=1;i=15111" DataType="Int32">
+    <DisplayName>Min</DisplayName>
+    <Description>Minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15111</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15113" BrowseName="1:Mean" ParentNodeId="ns=1;i=15111" DataType="Int32">
+    <DisplayName>Mean</DisplayName>
+    <Description>Mean of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15111</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15114" BrowseName="1:Max" ParentNodeId="ns=1;i=15111" DataType="Int32">
+    <DisplayName>Max</DisplayName>
+    <Description>Maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15111</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15115" BrowseName="1:AbsMax" ParentNodeId="ns=1;i=15111" DataType="Int32">
+    <DisplayName>AbsMax</DisplayName>
+    <Description>Absolute maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15111</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15116" BrowseName="1:AbsMin" ParentNodeId="ns=1;i=15111" DataType="Int32">
+    <DisplayName>AbsMin</DisplayName>
+    <Description>Absolute minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15111</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15117" BrowseName="1:Ms" ParentNodeId="ns=1;i=15111" DataType="UInt64">
+    <DisplayName>Ms</DisplayName>
+    <Description>Mean square of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15111</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15118" BrowseName="1:Variance" ParentNodeId="ns=1;i=15111" DataType="UInt64">
+    <DisplayName>Variance</DisplayName>
+    <Description>Variance of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15111</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15119" BrowseName="1:TrafficLatencyHisto" ParentNodeId="ns=1;i=15104">
+    <DisplayName>TrafficLatencyHisto</DisplayName>
+    <Description>Traffic latency histogram</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15120</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15121</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15122</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15009</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15104</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15120" BrowseName="1:NSlots" ParentNodeId="ns=1;i=15119" DataType="UInt32">
+    <DisplayName>NSlots</DisplayName>
+    <Description>Number of slots</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15119</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15121" BrowseName="1:SlotSize" ParentNodeId="ns=1;i=15119" DataType="UInt32">
+    <DisplayName>SlotSize</DisplayName>
+    <Description>Slot size</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15119</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15122" BrowseName="1:Slots" ParentNodeId="ns=1;i=15119" DataType="UInt32" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>Slots</DisplayName>
+    <Description>Array for the repartition of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15119</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15123" BrowseName="1:NetRxSocket0" ParentNodeId="ns=1;i=15084">
+    <DisplayName>NetRxSocket0</DisplayName>
+    <Description>NetRxSocket0</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15124</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15125</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15126</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15127</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15079</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15084</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15124" BrowseName="1:Direction" ParentNodeId="ns=1;i=15123" DataType="String">
+    <DisplayName>Direction</DisplayName>
+    <Description>Rx or tx</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15123</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15125" BrowseName="1:Id" ParentNodeId="ns=1;i=15123" DataType="Int32">
+    <DisplayName>Id</DisplayName>
+    <Description>Identifier</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15123</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15126" BrowseName="1:Frames" ParentNodeId="ns=1;i=15123" DataType="UInt32">
+    <DisplayName>Frames</DisplayName>
+    <Description>Frames number</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15123</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15127" BrowseName="1:FramesErr" ParentNodeId="ns=1;i=15123" DataType="UInt32">
+    <DisplayName>FramesErr</DisplayName>
+    <Description>Frames errors number</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15123</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15128" BrowseName="1:NetRxSocket1" ParentNodeId="ns=1;i=15084">
+    <DisplayName>NetRxSocket1</DisplayName>
+    <Description>NetRxSocket1</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15129</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15130</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15131</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15132</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15079</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15084</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15129" BrowseName="1:Direction" ParentNodeId="ns=1;i=15128" DataType="String">
+    <DisplayName>Direction</DisplayName>
+    <Description>Rx or tx</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15128</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15130" BrowseName="1:Id" ParentNodeId="ns=1;i=15128" DataType="Int32">
+    <DisplayName>Id</DisplayName>
+    <Description>Identifier</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15128</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15131" BrowseName="1:Frames" ParentNodeId="ns=1;i=15128" DataType="UInt32">
+    <DisplayName>Frames</DisplayName>
+    <Description>Frames number</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15128</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15132" BrowseName="1:FramesErr" ParentNodeId="ns=1;i=15128" DataType="UInt32">
+    <DisplayName>FramesErr</DisplayName>
+    <Description>Frames errors number</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15128</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15133" BrowseName="1:NetTxSocket0" ParentNodeId="ns=1;i=15084">
+    <DisplayName>NetTxSocket0</DisplayName>
+    <Description>NetTxSocket0</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15134</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15135</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15136</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15137</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15079</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15084</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15134" BrowseName="1:Direction" ParentNodeId="ns=1;i=15133" DataType="String">
+    <DisplayName>Direction</DisplayName>
+    <Description>Rx or tx</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15133</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15135" BrowseName="1:Id" ParentNodeId="ns=1;i=15133" DataType="Int32">
+    <DisplayName>Id</DisplayName>
+    <Description>Identifier</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15133</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15136" BrowseName="1:Frames" ParentNodeId="ns=1;i=15133" DataType="UInt32">
+    <DisplayName>Frames</DisplayName>
+    <Description>Frames number</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15133</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15137" BrowseName="1:FramesErr" ParentNodeId="ns=1;i=15133" DataType="UInt32">
+    <DisplayName>FramesErr</DisplayName>
+    <Description>Frames errors number</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15133</Reference>
+    </References>
+  </UAVariable>
+  <UAObjectType NodeId="ns=1;i=15138" BrowseName="1:TsnAppType">
+    <DisplayName>TsnAppType</DisplayName>
+    <Description>Base type for tsn_app</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15139</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15142</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15196</Reference>
+      <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
+    </References>
+  </UAObjectType>
+  <UAObject NodeId="ns=1;i=15139" BrowseName="1:Configuration" ParentNodeId="ns=1;i=15138">
+    <DisplayName>Configuration</DisplayName>
+    <Description>Configuration for the app</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=15140</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=15141</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15013</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15138</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15140" BrowseName="1:Role" ParentNodeId="ns=1;i=15139" DataType="String">
+    <DisplayName>Role</DisplayName>
+    <Description>Role of the endpoint : controller or io_device</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15139</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15141" BrowseName="1:NumPeers" ParentNodeId="ns=1;i=15139" DataType="UInt64">
+    <DisplayName>NumPeers</DisplayName>
+    <Description>Number of peers</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15139</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15142" BrowseName="1:SocketStats" ParentNodeId="ns=1;i=15138">
+    <DisplayName>SocketStats</DisplayName>
+    <Description>Statistics for the sockets</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15143</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15162</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15181</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15186</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15191</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15084</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15138</Reference>
+    </References>
+  </UAObject>
+  <UAObject NodeId="ns=1;i=15143" BrowseName="1:CyclicRxSocket0" ParentNodeId="ns=1;i=15142">
+    <DisplayName>CyclicRxSocket0</DisplayName>
+    <Description>CyclicRxSocket0</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15144</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15145</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15146</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15147</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15148</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15149</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15150</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15158</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15060</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15142</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15144" BrowseName="1:PeerId" ParentNodeId="ns=1;i=15143" DataType="Int32">
+    <DisplayName>PeerId</DisplayName>
+    <Description>Peer identifier</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15143</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15145" BrowseName="1:ValidFrames" ParentNodeId="ns=1;i=15143" DataType="UInt32">
+    <DisplayName>ValidFrames</DisplayName>
+    <Description>Number of valid frames</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15143</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15146" BrowseName="1:ErrId" ParentNodeId="ns=1;i=15143" DataType="UInt32">
+    <DisplayName>ErrId</DisplayName>
+    <Description>Error parameter</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15143</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15147" BrowseName="1:ErrTs" ParentNodeId="ns=1;i=15143" DataType="UInt32">
+    <DisplayName>ErrTs</DisplayName>
+    <Description>Error parameter</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15143</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15148" BrowseName="1:ErrUnderflow" ParentNodeId="ns=1;i=15143" DataType="UInt32">
+    <DisplayName>ErrUnderflow</DisplayName>
+    <Description>Error parameter</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15143</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15149" BrowseName="1:Link" ParentNodeId="ns=1;i=15143" DataType="String">
+    <DisplayName>Link</DisplayName>
+    <Description>Link up or down</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15143</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15150" BrowseName="1:TrafficLatencyStats" ParentNodeId="ns=1;i=15143">
+    <DisplayName>TrafficLatencyStats</DisplayName>
+    <Description>Traffic latency statistics</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15151</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15152</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15153</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15154</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15155</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15156</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15157</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15001</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15143</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15151" BrowseName="1:Min" ParentNodeId="ns=1;i=15150" DataType="Int32">
+    <DisplayName>Min</DisplayName>
+    <Description>Minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15150</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15152" BrowseName="1:Mean" ParentNodeId="ns=1;i=15150" DataType="Int32">
+    <DisplayName>Mean</DisplayName>
+    <Description>Mean of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15150</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15153" BrowseName="1:Max" ParentNodeId="ns=1;i=15150" DataType="Int32">
+    <DisplayName>Max</DisplayName>
+    <Description>Maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15150</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15154" BrowseName="1:AbsMax" ParentNodeId="ns=1;i=15150" DataType="Int32">
+    <DisplayName>AbsMax</DisplayName>
+    <Description>Absolute maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15150</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15155" BrowseName="1:AbsMin" ParentNodeId="ns=1;i=15150" DataType="Int32">
+    <DisplayName>AbsMin</DisplayName>
+    <Description>Absolute minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15150</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15156" BrowseName="1:Ms" ParentNodeId="ns=1;i=15150" DataType="UInt64">
+    <DisplayName>Ms</DisplayName>
+    <Description>Mean square of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15150</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15157" BrowseName="1:Variance" ParentNodeId="ns=1;i=15150" DataType="UInt64">
+    <DisplayName>Variance</DisplayName>
+    <Description>Variance of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15150</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15158" BrowseName="1:TrafficLatencyHisto" ParentNodeId="ns=1;i=15143">
+    <DisplayName>TrafficLatencyHisto</DisplayName>
+    <Description>Traffic latency histogram</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15159</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15160</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15161</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15009</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15143</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15159" BrowseName="1:NSlots" ParentNodeId="ns=1;i=15158" DataType="UInt32">
+    <DisplayName>NSlots</DisplayName>
+    <Description>Number of slots</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15158</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15160" BrowseName="1:SlotSize" ParentNodeId="ns=1;i=15158" DataType="UInt32">
+    <DisplayName>SlotSize</DisplayName>
+    <Description>Slot size</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15158</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15161" BrowseName="1:Slots" ParentNodeId="ns=1;i=15158" DataType="UInt32" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>Slots</DisplayName>
+    <Description>Array for the repartition of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15158</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15162" BrowseName="1:CyclicRxSocket1" ParentNodeId="ns=1;i=15142">
+    <DisplayName>CyclicRxSocket1</DisplayName>
+    <Description>CyclicRxSocket1</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15163</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15164</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15165</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15166</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15167</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15168</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15169</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15177</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15060</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15142</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15163" BrowseName="1:PeerId" ParentNodeId="ns=1;i=15162" DataType="Int32">
+    <DisplayName>PeerId</DisplayName>
+    <Description>Peer identifier</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15162</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15164" BrowseName="1:ValidFrames" ParentNodeId="ns=1;i=15162" DataType="UInt32">
+    <DisplayName>ValidFrames</DisplayName>
+    <Description>Number of valid frames</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15162</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15165" BrowseName="1:ErrId" ParentNodeId="ns=1;i=15162" DataType="UInt32">
+    <DisplayName>ErrId</DisplayName>
+    <Description>Error parameter</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15162</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15166" BrowseName="1:ErrTs" ParentNodeId="ns=1;i=15162" DataType="UInt32">
+    <DisplayName>ErrTs</DisplayName>
+    <Description>Error parameter</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15162</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15167" BrowseName="1:ErrUnderflow" ParentNodeId="ns=1;i=15162" DataType="UInt32">
+    <DisplayName>ErrUnderflow</DisplayName>
+    <Description>Error parameter</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15162</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15168" BrowseName="1:Link" ParentNodeId="ns=1;i=15162" DataType="String">
+    <DisplayName>Link</DisplayName>
+    <Description>Link up or down</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15162</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15169" BrowseName="1:TrafficLatencyStats" ParentNodeId="ns=1;i=15162">
+    <DisplayName>TrafficLatencyStats</DisplayName>
+    <Description>Traffic latency statistics</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15170</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15171</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15172</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15173</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15174</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15175</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15176</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15001</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15162</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15170" BrowseName="1:Min" ParentNodeId="ns=1;i=15169" DataType="Int32">
+    <DisplayName>Min</DisplayName>
+    <Description>Minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15169</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15171" BrowseName="1:Mean" ParentNodeId="ns=1;i=15169" DataType="Int32">
+    <DisplayName>Mean</DisplayName>
+    <Description>Mean of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15169</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15172" BrowseName="1:Max" ParentNodeId="ns=1;i=15169" DataType="Int32">
+    <DisplayName>Max</DisplayName>
+    <Description>Maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15169</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15173" BrowseName="1:AbsMax" ParentNodeId="ns=1;i=15169" DataType="Int32">
+    <DisplayName>AbsMax</DisplayName>
+    <Description>Absolute maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15169</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15174" BrowseName="1:AbsMin" ParentNodeId="ns=1;i=15169" DataType="Int32">
+    <DisplayName>AbsMin</DisplayName>
+    <Description>Absolute minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15169</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15175" BrowseName="1:Ms" ParentNodeId="ns=1;i=15169" DataType="UInt64">
+    <DisplayName>Ms</DisplayName>
+    <Description>Mean square of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15169</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15176" BrowseName="1:Variance" ParentNodeId="ns=1;i=15169" DataType="UInt64">
+    <DisplayName>Variance</DisplayName>
+    <Description>Variance of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15169</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15177" BrowseName="1:TrafficLatencyHisto" ParentNodeId="ns=1;i=15162">
+    <DisplayName>TrafficLatencyHisto</DisplayName>
+    <Description>Traffic latency histogram</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15178</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15179</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15180</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15009</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15162</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15178" BrowseName="1:NSlots" ParentNodeId="ns=1;i=15177" DataType="UInt32">
+    <DisplayName>NSlots</DisplayName>
+    <Description>Number of slots</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15177</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15179" BrowseName="1:SlotSize" ParentNodeId="ns=1;i=15177" DataType="UInt32">
+    <DisplayName>SlotSize</DisplayName>
+    <Description>Slot size</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15177</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15180" BrowseName="1:Slots" ParentNodeId="ns=1;i=15177" DataType="UInt32" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>Slots</DisplayName>
+    <Description>Array for the repartition of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15177</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15181" BrowseName="1:NetRxSocket0" ParentNodeId="ns=1;i=15142">
+    <DisplayName>NetRxSocket0</DisplayName>
+    <Description>NetRxSocket0</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15182</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15183</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15184</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15185</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15079</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15142</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15182" BrowseName="1:Direction" ParentNodeId="ns=1;i=15181" DataType="String">
+    <DisplayName>Direction</DisplayName>
+    <Description>Rx or tx</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15181</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15183" BrowseName="1:Id" ParentNodeId="ns=1;i=15181" DataType="Int32">
+    <DisplayName>Id</DisplayName>
+    <Description>Identifier</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15181</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15184" BrowseName="1:Frames" ParentNodeId="ns=1;i=15181" DataType="UInt32">
+    <DisplayName>Frames</DisplayName>
+    <Description>Frames number</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15181</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15185" BrowseName="1:FramesErr" ParentNodeId="ns=1;i=15181" DataType="UInt32">
+    <DisplayName>FramesErr</DisplayName>
+    <Description>Frames errors number</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15181</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15186" BrowseName="1:NetRxSocket1" ParentNodeId="ns=1;i=15142">
+    <DisplayName>NetRxSocket1</DisplayName>
+    <Description>NetRxSocket1</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15187</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15188</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15189</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15190</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15079</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15142</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15187" BrowseName="1:Direction" ParentNodeId="ns=1;i=15186" DataType="String">
+    <DisplayName>Direction</DisplayName>
+    <Description>Rx or tx</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15186</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15188" BrowseName="1:Id" ParentNodeId="ns=1;i=15186" DataType="Int32">
+    <DisplayName>Id</DisplayName>
+    <Description>Identifier</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15186</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15189" BrowseName="1:Frames" ParentNodeId="ns=1;i=15186" DataType="UInt32">
+    <DisplayName>Frames</DisplayName>
+    <Description>Frames number</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15186</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15190" BrowseName="1:FramesErr" ParentNodeId="ns=1;i=15186" DataType="UInt32">
+    <DisplayName>FramesErr</DisplayName>
+    <Description>Frames errors number</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15186</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15191" BrowseName="1:NetTxSocket0" ParentNodeId="ns=1;i=15142">
+    <DisplayName>NetTxSocket0</DisplayName>
+    <Description>NetTxSocket0</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15192</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15193</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15194</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15195</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15079</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15142</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15192" BrowseName="1:Direction" ParentNodeId="ns=1;i=15191" DataType="String">
+    <DisplayName>Direction</DisplayName>
+    <Description>Rx or tx</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15191</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15193" BrowseName="1:Id" ParentNodeId="ns=1;i=15191" DataType="Int32">
+    <DisplayName>Id</DisplayName>
+    <Description>Identifier</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15191</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15194" BrowseName="1:Frames" ParentNodeId="ns=1;i=15191" DataType="UInt32">
+    <DisplayName>Frames</DisplayName>
+    <Description>Frames number</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15191</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15195" BrowseName="1:FramesErr" ParentNodeId="ns=1;i=15191" DataType="UInt32">
+    <DisplayName>FramesErr</DisplayName>
+    <Description>Frames errors number</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15191</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15196" BrowseName="1:TaskStats" ParentNodeId="ns=1;i=15138">
+    <DisplayName>TaskStats</DisplayName>
+    <Description>Statistics</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15197</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15198</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15199</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15200</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15201</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15202</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15203</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15204</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15212</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15216</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15224</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15228</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15236</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15016</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15138</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15197" BrowseName="1:Sched" ParentNodeId="ns=1;i=15196" DataType="UInt32">
+    <DisplayName>Sched</DisplayName>
+    <Description>Sched</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15196</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15198" BrowseName="1:SchedEarly" ParentNodeId="ns=1;i=15196" DataType="UInt32">
+    <DisplayName>SchedEarly</DisplayName>
+    <Description>SchedEarly</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15196</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15199" BrowseName="1:SchedLate" ParentNodeId="ns=1;i=15196" DataType="UInt32">
+    <DisplayName>SchedLate</DisplayName>
+    <Description>SchedLate</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15196</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15200" BrowseName="1:SchedMissed" ParentNodeId="ns=1;i=15196" DataType="UInt32">
+    <DisplayName>SchedMissed</DisplayName>
+    <Description>SchedMissed</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15196</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15201" BrowseName="1:SchedTimeout" ParentNodeId="ns=1;i=15196" DataType="UInt32">
+    <DisplayName>SchedTimeout</DisplayName>
+    <Description>SchedTimeout</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15196</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15202" BrowseName="1:ClockDiscount" ParentNodeId="ns=1;i=15196" DataType="UInt32">
+    <DisplayName>ClockDiscount</DisplayName>
+    <Description>ClockDiscount</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15196</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15203" BrowseName="1:ClockErr" ParentNodeId="ns=1;i=15196" DataType="UInt32">
+    <DisplayName>ClockErr</DisplayName>
+    <Description>ClockErr</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15196</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15204" BrowseName="1:SchedErrStats" ParentNodeId="ns=1;i=15196">
+    <DisplayName>SchedErrStats</DisplayName>
+    <Description>SchedErrStats</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15205</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15206</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15207</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15208</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15209</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15210</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15211</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15001</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15196</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15205" BrowseName="1:Min" ParentNodeId="ns=1;i=15204" DataType="Int32">
+    <DisplayName>Min</DisplayName>
+    <Description>Minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15204</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15206" BrowseName="1:Mean" ParentNodeId="ns=1;i=15204" DataType="Int32">
+    <DisplayName>Mean</DisplayName>
+    <Description>Mean of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15204</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15207" BrowseName="1:Max" ParentNodeId="ns=1;i=15204" DataType="Int32">
+    <DisplayName>Max</DisplayName>
+    <Description>Maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15204</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15208" BrowseName="1:AbsMax" ParentNodeId="ns=1;i=15204" DataType="Int32">
+    <DisplayName>AbsMax</DisplayName>
+    <Description>Absolute maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15204</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15209" BrowseName="1:AbsMin" ParentNodeId="ns=1;i=15204" DataType="Int32">
+    <DisplayName>AbsMin</DisplayName>
+    <Description>Absolute minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15204</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15210" BrowseName="1:Ms" ParentNodeId="ns=1;i=15204" DataType="UInt64">
+    <DisplayName>Ms</DisplayName>
+    <Description>Mean square of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15204</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15211" BrowseName="1:Variance" ParentNodeId="ns=1;i=15204" DataType="UInt64">
+    <DisplayName>Variance</DisplayName>
+    <Description>Variance of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15204</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15212" BrowseName="1:SchedErrHisto" ParentNodeId="ns=1;i=15196">
+    <DisplayName>SchedErrHisto</DisplayName>
+    <Description>SchedErrHisto</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15213</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15214</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15215</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15009</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15196</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15213" BrowseName="1:NSlots" ParentNodeId="ns=1;i=15212" DataType="UInt32">
+    <DisplayName>NSlots</DisplayName>
+    <Description>Number of slots</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15212</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15214" BrowseName="1:SlotSize" ParentNodeId="ns=1;i=15212" DataType="UInt32">
+    <DisplayName>SlotSize</DisplayName>
+    <Description>Slot size</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15212</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15215" BrowseName="1:Slots" ParentNodeId="ns=1;i=15212" DataType="UInt32" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>Slots</DisplayName>
+    <Description>Array for the repartition of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15212</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15216" BrowseName="1:ProcTimeStats" ParentNodeId="ns=1;i=15196">
+    <DisplayName>ProcTimeStats</DisplayName>
+    <Description>Processing time statistics</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15217</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15218</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15219</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15220</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15221</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15222</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15223</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15001</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15196</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15217" BrowseName="1:Min" ParentNodeId="ns=1;i=15216" DataType="Int32">
+    <DisplayName>Min</DisplayName>
+    <Description>Minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15216</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15218" BrowseName="1:Mean" ParentNodeId="ns=1;i=15216" DataType="Int32">
+    <DisplayName>Mean</DisplayName>
+    <Description>Mean of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15216</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15219" BrowseName="1:Max" ParentNodeId="ns=1;i=15216" DataType="Int32">
+    <DisplayName>Max</DisplayName>
+    <Description>Maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15216</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15220" BrowseName="1:AbsMax" ParentNodeId="ns=1;i=15216" DataType="Int32">
+    <DisplayName>AbsMax</DisplayName>
+    <Description>Absolute maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15216</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15221" BrowseName="1:AbsMin" ParentNodeId="ns=1;i=15216" DataType="Int32">
+    <DisplayName>AbsMin</DisplayName>
+    <Description>Absolute minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15216</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15222" BrowseName="1:Ms" ParentNodeId="ns=1;i=15216" DataType="UInt64">
+    <DisplayName>Ms</DisplayName>
+    <Description>Mean square of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15216</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15223" BrowseName="1:Variance" ParentNodeId="ns=1;i=15216" DataType="UInt64">
+    <DisplayName>Variance</DisplayName>
+    <Description>Variance of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15216</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15224" BrowseName="1:ProcTimeHisto" ParentNodeId="ns=1;i=15196">
+    <DisplayName>ProcTimeHisto</DisplayName>
+    <Description>Processing time histogram</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15225</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15226</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15227</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15009</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15196</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15225" BrowseName="1:NSlots" ParentNodeId="ns=1;i=15224" DataType="UInt32">
+    <DisplayName>NSlots</DisplayName>
+    <Description>Number of slots</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15224</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15226" BrowseName="1:SlotSize" ParentNodeId="ns=1;i=15224" DataType="UInt32">
+    <DisplayName>SlotSize</DisplayName>
+    <Description>Slot size</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15224</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15227" BrowseName="1:Slots" ParentNodeId="ns=1;i=15224" DataType="UInt32" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>Slots</DisplayName>
+    <Description>Array for the repartition of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15224</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15228" BrowseName="1:TotalTimeStats" ParentNodeId="ns=1;i=15196">
+    <DisplayName>TotalTimeStats</DisplayName>
+    <Description>Total time statistics</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15229</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15230</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15231</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15232</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15233</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15234</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15235</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15001</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15196</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15229" BrowseName="1:Min" ParentNodeId="ns=1;i=15228" DataType="Int32">
+    <DisplayName>Min</DisplayName>
+    <Description>Minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15228</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15230" BrowseName="1:Mean" ParentNodeId="ns=1;i=15228" DataType="Int32">
+    <DisplayName>Mean</DisplayName>
+    <Description>Mean of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15228</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15231" BrowseName="1:Max" ParentNodeId="ns=1;i=15228" DataType="Int32">
+    <DisplayName>Max</DisplayName>
+    <Description>Maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15228</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15232" BrowseName="1:AbsMax" ParentNodeId="ns=1;i=15228" DataType="Int32">
+    <DisplayName>AbsMax</DisplayName>
+    <Description>Absolute maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15228</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15233" BrowseName="1:AbsMin" ParentNodeId="ns=1;i=15228" DataType="Int32">
+    <DisplayName>AbsMin</DisplayName>
+    <Description>Absolute minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15228</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15234" BrowseName="1:Ms" ParentNodeId="ns=1;i=15228" DataType="UInt64">
+    <DisplayName>Ms</DisplayName>
+    <Description>Mean square of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15228</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15235" BrowseName="1:Variance" ParentNodeId="ns=1;i=15228" DataType="UInt64">
+    <DisplayName>Variance</DisplayName>
+    <Description>Variance of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15228</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15236" BrowseName="1:TotalTimeHisto" ParentNodeId="ns=1;i=15196">
+    <DisplayName>TotalTimeHisto</DisplayName>
+    <Description>Total time histogram</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15237</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15238</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15239</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15009</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15196</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15237" BrowseName="1:NSlots" ParentNodeId="ns=1;i=15236" DataType="UInt32">
+    <DisplayName>NSlots</DisplayName>
+    <Description>Number of slots</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15236</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15238" BrowseName="1:SlotSize" ParentNodeId="ns=1;i=15236" DataType="UInt32">
+    <DisplayName>SlotSize</DisplayName>
+    <Description>Slot size</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15236</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15239" BrowseName="1:Slots" ParentNodeId="ns=1;i=15236" DataType="UInt32" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>Slots</DisplayName>
+    <Description>Array for the repartition of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15236</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15240" BrowseName="1:TsnApp" EventNotifier="1">
+    <DisplayName>TsnApp</DisplayName>
+    <Description>TsnApp object</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15241</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15244</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15298</Reference>
+      <Reference ReferenceType="Organizes" IsForward="false">i=85</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15138</Reference>
+    </References>
+  </UAObject>
+  <UAObject NodeId="ns=1;i=15241" BrowseName="1:Configuration" ParentNodeId="ns=1;i=15240">
+    <DisplayName>Configuration</DisplayName>
+    <Description>Configuration for the app</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=15242</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=15243</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15013</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15240</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15242" BrowseName="1:Role" ParentNodeId="ns=1;i=15241" DataType="String">
+    <DisplayName>Role</DisplayName>
+    <Description>Role of the endpoint : controller or io_device</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15241</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15243" BrowseName="1:NumPeers" ParentNodeId="ns=1;i=15241" DataType="UInt64">
+    <DisplayName>NumPeers</DisplayName>
+    <Description>Number of peers</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15241</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15244" BrowseName="1:SocketStats" ParentNodeId="ns=1;i=15240">
+    <DisplayName>SocketStats</DisplayName>
+    <Description>Statistics for the sockets</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15245</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15264</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15283</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15288</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15293</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15084</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15240</Reference>
+    </References>
+  </UAObject>
+  <UAObject NodeId="ns=1;i=15245" BrowseName="1:CyclicRxSocket0" ParentNodeId="ns=1;i=15244">
+    <DisplayName>CyclicRxSocket0</DisplayName>
+    <Description>CyclicRxSocket0</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15246</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15247</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15248</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15249</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15250</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15251</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15252</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15260</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15060</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15244</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15246" BrowseName="1:PeerId" ParentNodeId="ns=1;i=15245" DataType="Int32">
+    <DisplayName>PeerId</DisplayName>
+    <Description>Peer identifier</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15245</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15247" BrowseName="1:ValidFrames" ParentNodeId="ns=1;i=15245" DataType="UInt32">
+    <DisplayName>ValidFrames</DisplayName>
+    <Description>Number of valid frames</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15245</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15248" BrowseName="1:ErrId" ParentNodeId="ns=1;i=15245" DataType="UInt32">
+    <DisplayName>ErrId</DisplayName>
+    <Description>Error parameter</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15245</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15249" BrowseName="1:ErrTs" ParentNodeId="ns=1;i=15245" DataType="UInt32">
+    <DisplayName>ErrTs</DisplayName>
+    <Description>Error parameter</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15245</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15250" BrowseName="1:ErrUnderflow" ParentNodeId="ns=1;i=15245" DataType="UInt32">
+    <DisplayName>ErrUnderflow</DisplayName>
+    <Description>Error parameter</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15245</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15251" BrowseName="1:Link" ParentNodeId="ns=1;i=15245" DataType="String">
+    <DisplayName>Link</DisplayName>
+    <Description>Link up or down</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15245</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15252" BrowseName="1:TrafficLatencyStats" ParentNodeId="ns=1;i=15245">
+    <DisplayName>TrafficLatencyStats</DisplayName>
+    <Description>Traffic latency statistics</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15253</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15254</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15255</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15256</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15257</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15258</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15259</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15001</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15245</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15253" BrowseName="1:Min" ParentNodeId="ns=1;i=15252" DataType="Int32">
+    <DisplayName>Min</DisplayName>
+    <Description>Minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15252</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15254" BrowseName="1:Mean" ParentNodeId="ns=1;i=15252" DataType="Int32">
+    <DisplayName>Mean</DisplayName>
+    <Description>Mean of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15252</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15255" BrowseName="1:Max" ParentNodeId="ns=1;i=15252" DataType="Int32">
+    <DisplayName>Max</DisplayName>
+    <Description>Maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15252</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15256" BrowseName="1:AbsMax" ParentNodeId="ns=1;i=15252" DataType="Int32">
+    <DisplayName>AbsMax</DisplayName>
+    <Description>Absolute maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15252</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15257" BrowseName="1:AbsMin" ParentNodeId="ns=1;i=15252" DataType="Int32">
+    <DisplayName>AbsMin</DisplayName>
+    <Description>Absolute minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15252</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15258" BrowseName="1:Ms" ParentNodeId="ns=1;i=15252" DataType="UInt64">
+    <DisplayName>Ms</DisplayName>
+    <Description>Mean square of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15252</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15259" BrowseName="1:Variance" ParentNodeId="ns=1;i=15252" DataType="UInt64">
+    <DisplayName>Variance</DisplayName>
+    <Description>Variance of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15252</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15260" BrowseName="1:TrafficLatencyHisto" ParentNodeId="ns=1;i=15245">
+    <DisplayName>TrafficLatencyHisto</DisplayName>
+    <Description>Traffic latency histogram</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15261</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15262</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15263</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15009</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15245</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15261" BrowseName="1:NSlots" ParentNodeId="ns=1;i=15260" DataType="UInt32">
+    <DisplayName>NSlots</DisplayName>
+    <Description>Number of slots</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15260</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15262" BrowseName="1:SlotSize" ParentNodeId="ns=1;i=15260" DataType="UInt32">
+    <DisplayName>SlotSize</DisplayName>
+    <Description>Slot size</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15260</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15263" BrowseName="1:Slots" ParentNodeId="ns=1;i=15260" DataType="UInt32" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>Slots</DisplayName>
+    <Description>Array for the repartition of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15260</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15264" BrowseName="1:CyclicRxSocket1" ParentNodeId="ns=1;i=15244">
+    <DisplayName>CyclicRxSocket1</DisplayName>
+    <Description>CyclicRxSocket1</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15265</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15266</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15267</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15268</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15269</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15270</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15271</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15279</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15060</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15244</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15265" BrowseName="1:PeerId" ParentNodeId="ns=1;i=15264" DataType="Int32">
+    <DisplayName>PeerId</DisplayName>
+    <Description>Peer identifier</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15264</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15266" BrowseName="1:ValidFrames" ParentNodeId="ns=1;i=15264" DataType="UInt32">
+    <DisplayName>ValidFrames</DisplayName>
+    <Description>Number of valid frames</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15264</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15267" BrowseName="1:ErrId" ParentNodeId="ns=1;i=15264" DataType="UInt32">
+    <DisplayName>ErrId</DisplayName>
+    <Description>Error parameter</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15264</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15268" BrowseName="1:ErrTs" ParentNodeId="ns=1;i=15264" DataType="UInt32">
+    <DisplayName>ErrTs</DisplayName>
+    <Description>Error parameter</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15264</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15269" BrowseName="1:ErrUnderflow" ParentNodeId="ns=1;i=15264" DataType="UInt32">
+    <DisplayName>ErrUnderflow</DisplayName>
+    <Description>Error parameter</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15264</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15270" BrowseName="1:Link" ParentNodeId="ns=1;i=15264" DataType="String">
+    <DisplayName>Link</DisplayName>
+    <Description>Link up or down</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15264</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15271" BrowseName="1:TrafficLatencyStats" ParentNodeId="ns=1;i=15264">
+    <DisplayName>TrafficLatencyStats</DisplayName>
+    <Description>Traffic latency statistics</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15272</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15273</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15274</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15275</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15276</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15277</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15278</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15001</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15264</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15272" BrowseName="1:Min" ParentNodeId="ns=1;i=15271" DataType="Int32">
+    <DisplayName>Min</DisplayName>
+    <Description>Minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15271</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15273" BrowseName="1:Mean" ParentNodeId="ns=1;i=15271" DataType="Int32">
+    <DisplayName>Mean</DisplayName>
+    <Description>Mean of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15271</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15274" BrowseName="1:Max" ParentNodeId="ns=1;i=15271" DataType="Int32">
+    <DisplayName>Max</DisplayName>
+    <Description>Maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15271</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15275" BrowseName="1:AbsMax" ParentNodeId="ns=1;i=15271" DataType="Int32">
+    <DisplayName>AbsMax</DisplayName>
+    <Description>Absolute maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15271</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15276" BrowseName="1:AbsMin" ParentNodeId="ns=1;i=15271" DataType="Int32">
+    <DisplayName>AbsMin</DisplayName>
+    <Description>Absolute minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15271</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15277" BrowseName="1:Ms" ParentNodeId="ns=1;i=15271" DataType="UInt64">
+    <DisplayName>Ms</DisplayName>
+    <Description>Mean square of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15271</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15278" BrowseName="1:Variance" ParentNodeId="ns=1;i=15271" DataType="UInt64">
+    <DisplayName>Variance</DisplayName>
+    <Description>Variance of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15271</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15279" BrowseName="1:TrafficLatencyHisto" ParentNodeId="ns=1;i=15264">
+    <DisplayName>TrafficLatencyHisto</DisplayName>
+    <Description>Traffic latency histogram</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15280</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15281</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15282</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15009</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15264</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15280" BrowseName="1:NSlots" ParentNodeId="ns=1;i=15279" DataType="UInt32">
+    <DisplayName>NSlots</DisplayName>
+    <Description>Number of slots</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15279</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15281" BrowseName="1:SlotSize" ParentNodeId="ns=1;i=15279" DataType="UInt32">
+    <DisplayName>SlotSize</DisplayName>
+    <Description>Slot size</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15279</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15282" BrowseName="1:Slots" ParentNodeId="ns=1;i=15279" DataType="UInt32" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>Slots</DisplayName>
+    <Description>Array for the repartition of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15279</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15283" BrowseName="1:NetRxSocket0" ParentNodeId="ns=1;i=15244">
+    <DisplayName>NetRxSocket0</DisplayName>
+    <Description>NetRxSocket0</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15284</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15285</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15286</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15287</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15079</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15244</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15284" BrowseName="1:Direction" ParentNodeId="ns=1;i=15283" DataType="String">
+    <DisplayName>Direction</DisplayName>
+    <Description>Rx or tx</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15283</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15285" BrowseName="1:Id" ParentNodeId="ns=1;i=15283" DataType="Int32">
+    <DisplayName>Id</DisplayName>
+    <Description>Identifier</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15283</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15286" BrowseName="1:Frames" ParentNodeId="ns=1;i=15283" DataType="UInt32">
+    <DisplayName>Frames</DisplayName>
+    <Description>Frames number</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15283</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15287" BrowseName="1:FramesErr" ParentNodeId="ns=1;i=15283" DataType="UInt32">
+    <DisplayName>FramesErr</DisplayName>
+    <Description>Frames errors number</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15283</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15288" BrowseName="1:NetRxSocket1" ParentNodeId="ns=1;i=15244">
+    <DisplayName>NetRxSocket1</DisplayName>
+    <Description>NetRxSocket1</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15289</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15290</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15291</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15292</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15079</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15244</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15289" BrowseName="1:Direction" ParentNodeId="ns=1;i=15288" DataType="String">
+    <DisplayName>Direction</DisplayName>
+    <Description>Rx or tx</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15288</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15290" BrowseName="1:Id" ParentNodeId="ns=1;i=15288" DataType="Int32">
+    <DisplayName>Id</DisplayName>
+    <Description>Identifier</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15288</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15291" BrowseName="1:Frames" ParentNodeId="ns=1;i=15288" DataType="UInt32">
+    <DisplayName>Frames</DisplayName>
+    <Description>Frames number</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15288</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15292" BrowseName="1:FramesErr" ParentNodeId="ns=1;i=15288" DataType="UInt32">
+    <DisplayName>FramesErr</DisplayName>
+    <Description>Frames errors number</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15288</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15293" BrowseName="1:NetTxSocket0" ParentNodeId="ns=1;i=15244">
+    <DisplayName>NetTxSocket0</DisplayName>
+    <Description>NetTxSocket0</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15294</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15295</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15296</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15297</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15079</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15244</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15294" BrowseName="1:Direction" ParentNodeId="ns=1;i=15293" DataType="String">
+    <DisplayName>Direction</DisplayName>
+    <Description>Rx or tx</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15293</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15295" BrowseName="1:Id" ParentNodeId="ns=1;i=15293" DataType="Int32">
+    <DisplayName>Id</DisplayName>
+    <Description>Identifier</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15293</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15296" BrowseName="1:Frames" ParentNodeId="ns=1;i=15293" DataType="UInt32">
+    <DisplayName>Frames</DisplayName>
+    <Description>Frames number</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15293</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15297" BrowseName="1:FramesErr" ParentNodeId="ns=1;i=15293" DataType="UInt32">
+    <DisplayName>FramesErr</DisplayName>
+    <Description>Frames errors number</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15293</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15298" BrowseName="1:TaskStats" ParentNodeId="ns=1;i=15240">
+    <DisplayName>TaskStats</DisplayName>
+    <Description>Statistics</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15299</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15300</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15301</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15302</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15303</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15304</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15305</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15306</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15314</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15318</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15326</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15330</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15338</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15016</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15240</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15299" BrowseName="1:Sched" ParentNodeId="ns=1;i=15298" DataType="UInt32">
+    <DisplayName>Sched</DisplayName>
+    <Description>Sched</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15298</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15300" BrowseName="1:SchedEarly" ParentNodeId="ns=1;i=15298" DataType="UInt32">
+    <DisplayName>SchedEarly</DisplayName>
+    <Description>SchedEarly</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15298</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15301" BrowseName="1:SchedLate" ParentNodeId="ns=1;i=15298" DataType="UInt32">
+    <DisplayName>SchedLate</DisplayName>
+    <Description>SchedLate</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15298</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15302" BrowseName="1:SchedMissed" ParentNodeId="ns=1;i=15298" DataType="UInt32">
+    <DisplayName>SchedMissed</DisplayName>
+    <Description>SchedMissed</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15298</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15303" BrowseName="1:SchedTimeout" ParentNodeId="ns=1;i=15298" DataType="UInt32">
+    <DisplayName>SchedTimeout</DisplayName>
+    <Description>SchedTimeout</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15298</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15304" BrowseName="1:ClockDiscount" ParentNodeId="ns=1;i=15298" DataType="UInt32">
+    <DisplayName>ClockDiscount</DisplayName>
+    <Description>ClockDiscount</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15298</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15305" BrowseName="1:ClockErr" ParentNodeId="ns=1;i=15298" DataType="UInt32">
+    <DisplayName>ClockErr</DisplayName>
+    <Description>ClockErr</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15298</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15306" BrowseName="1:SchedErrStats" ParentNodeId="ns=1;i=15298">
+    <DisplayName>SchedErrStats</DisplayName>
+    <Description>SchedErrStats</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15307</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15308</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15309</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15310</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15311</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15312</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15313</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15001</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15298</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15307" BrowseName="1:Min" ParentNodeId="ns=1;i=15306" DataType="Int32">
+    <DisplayName>Min</DisplayName>
+    <Description>Minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15306</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15308" BrowseName="1:Mean" ParentNodeId="ns=1;i=15306" DataType="Int32">
+    <DisplayName>Mean</DisplayName>
+    <Description>Mean of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15306</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15309" BrowseName="1:Max" ParentNodeId="ns=1;i=15306" DataType="Int32">
+    <DisplayName>Max</DisplayName>
+    <Description>Maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15306</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15310" BrowseName="1:AbsMax" ParentNodeId="ns=1;i=15306" DataType="Int32">
+    <DisplayName>AbsMax</DisplayName>
+    <Description>Absolute maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15306</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15311" BrowseName="1:AbsMin" ParentNodeId="ns=1;i=15306" DataType="Int32">
+    <DisplayName>AbsMin</DisplayName>
+    <Description>Absolute minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15306</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15312" BrowseName="1:Ms" ParentNodeId="ns=1;i=15306" DataType="UInt64">
+    <DisplayName>Ms</DisplayName>
+    <Description>Mean square of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15306</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15313" BrowseName="1:Variance" ParentNodeId="ns=1;i=15306" DataType="UInt64">
+    <DisplayName>Variance</DisplayName>
+    <Description>Variance of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15306</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15314" BrowseName="1:SchedErrHisto" ParentNodeId="ns=1;i=15298">
+    <DisplayName>SchedErrHisto</DisplayName>
+    <Description>SchedErrHisto</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15315</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15316</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15317</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15009</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15298</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15315" BrowseName="1:NSlots" ParentNodeId="ns=1;i=15314" DataType="UInt32">
+    <DisplayName>NSlots</DisplayName>
+    <Description>Number of slots</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15314</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15316" BrowseName="1:SlotSize" ParentNodeId="ns=1;i=15314" DataType="UInt32">
+    <DisplayName>SlotSize</DisplayName>
+    <Description>Slot size</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15314</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15317" BrowseName="1:Slots" ParentNodeId="ns=1;i=15314" DataType="UInt32" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>Slots</DisplayName>
+    <Description>Array for the repartition of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15314</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15318" BrowseName="1:ProcTimeStats" ParentNodeId="ns=1;i=15298">
+    <DisplayName>ProcTimeStats</DisplayName>
+    <Description>Processing time statistics</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15319</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15320</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15321</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15322</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15323</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15324</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15325</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15001</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15298</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15319" BrowseName="1:Min" ParentNodeId="ns=1;i=15318" DataType="Int32">
+    <DisplayName>Min</DisplayName>
+    <Description>Minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15318</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15320" BrowseName="1:Mean" ParentNodeId="ns=1;i=15318" DataType="Int32">
+    <DisplayName>Mean</DisplayName>
+    <Description>Mean of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15318</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15321" BrowseName="1:Max" ParentNodeId="ns=1;i=15318" DataType="Int32">
+    <DisplayName>Max</DisplayName>
+    <Description>Maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15318</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15322" BrowseName="1:AbsMax" ParentNodeId="ns=1;i=15318" DataType="Int32">
+    <DisplayName>AbsMax</DisplayName>
+    <Description>Absolute maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15318</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15323" BrowseName="1:AbsMin" ParentNodeId="ns=1;i=15318" DataType="Int32">
+    <DisplayName>AbsMin</DisplayName>
+    <Description>Absolute minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15318</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15324" BrowseName="1:Ms" ParentNodeId="ns=1;i=15318" DataType="UInt64">
+    <DisplayName>Ms</DisplayName>
+    <Description>Mean square of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15318</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15325" BrowseName="1:Variance" ParentNodeId="ns=1;i=15318" DataType="UInt64">
+    <DisplayName>Variance</DisplayName>
+    <Description>Variance of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15318</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15326" BrowseName="1:ProcTimeHisto" ParentNodeId="ns=1;i=15298">
+    <DisplayName>ProcTimeHisto</DisplayName>
+    <Description>Processing time histogram</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15327</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15328</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15329</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15009</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15298</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15327" BrowseName="1:NSlots" ParentNodeId="ns=1;i=15326" DataType="UInt32">
+    <DisplayName>NSlots</DisplayName>
+    <Description>Number of slots</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15326</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15328" BrowseName="1:SlotSize" ParentNodeId="ns=1;i=15326" DataType="UInt32">
+    <DisplayName>SlotSize</DisplayName>
+    <Description>Slot size</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15326</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15329" BrowseName="1:Slots" ParentNodeId="ns=1;i=15326" DataType="UInt32" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>Slots</DisplayName>
+    <Description>Array for the repartition of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15326</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15330" BrowseName="1:TotalTimeStats" ParentNodeId="ns=1;i=15298">
+    <DisplayName>TotalTimeStats</DisplayName>
+    <Description>Total time statistics</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15331</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15332</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15333</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15334</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15335</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15336</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15337</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15001</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15298</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15331" BrowseName="1:Min" ParentNodeId="ns=1;i=15330" DataType="Int32">
+    <DisplayName>Min</DisplayName>
+    <Description>Minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15330</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15332" BrowseName="1:Mean" ParentNodeId="ns=1;i=15330" DataType="Int32">
+    <DisplayName>Mean</DisplayName>
+    <Description>Mean of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15330</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15333" BrowseName="1:Max" ParentNodeId="ns=1;i=15330" DataType="Int32">
+    <DisplayName>Max</DisplayName>
+    <Description>Maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15330</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15334" BrowseName="1:AbsMax" ParentNodeId="ns=1;i=15330" DataType="Int32">
+    <DisplayName>AbsMax</DisplayName>
+    <Description>Absolute maximum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15330</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15335" BrowseName="1:AbsMin" ParentNodeId="ns=1;i=15330" DataType="Int32">
+    <DisplayName>AbsMin</DisplayName>
+    <Description>Absolute minimum of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15330</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15336" BrowseName="1:Ms" ParentNodeId="ns=1;i=15330" DataType="UInt64">
+    <DisplayName>Ms</DisplayName>
+    <Description>Mean square of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15330</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15337" BrowseName="1:Variance" ParentNodeId="ns=1;i=15330" DataType="UInt64">
+    <DisplayName>Variance</DisplayName>
+    <Description>Variance of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15330</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15338" BrowseName="1:TotalTimeHisto" ParentNodeId="ns=1;i=15298">
+    <DisplayName>TotalTimeHisto</DisplayName>
+    <Description>Total time histogram</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15339</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15340</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15341</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=15009</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15298</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15339" BrowseName="1:NSlots" ParentNodeId="ns=1;i=15338" DataType="UInt32">
+    <DisplayName>NSlots</DisplayName>
+    <Description>Number of slots</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15338</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15340" BrowseName="1:SlotSize" ParentNodeId="ns=1;i=15338" DataType="UInt32">
+    <DisplayName>SlotSize</DisplayName>
+    <Description>Slot size</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15338</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15341" BrowseName="1:Slots" ParentNodeId="ns=1;i=15338" DataType="UInt32" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>Slots</DisplayName>
+    <Description>Array for the repartition of the values</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15338</Reference>
+    </References>
+  </UAVariable>
+</UANodeSet>

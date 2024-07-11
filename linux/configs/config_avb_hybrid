@@ -1,0 +1,11 @@
+#! /bin/sh
+
+# Changes in endpoint application profiles should be done in /etc/genavb/config_avb
+. "/etc/genavb/config_avb"
+
+## Internal Configurations: Do not change ##
+# Network Sockets Mode:
+AVB_MODE=1
+
+# Package Type:
+PACKAGE=HYBRID

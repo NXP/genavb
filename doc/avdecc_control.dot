@@ -1,0 +1,84 @@
+digraph {
+fontname=Helvetica;
+node[fontname=Helvetica];
+size="!1,1";
+label="AVDECC control paths";
+rankdir=LR;
+ordering=out;
+streamer[shape=Mrecord, label="Talker/Listener\nstreaming\napplication", rank=source];
+controller[shape=Mrecord, label="Controller\napplication", rank=source];
+controlled[shape=Mrecord, label="Talker/Listener\ncontrol\napplication", rank=source];
+
+subgraph cluster2 {
+  shape=box;
+  label="Media stack channel";
+  node[shape="record"];
+  media[label="<conn> CONNECT |<dis> DISCONNECT"];
+}
+
+subgraph cluster1 {
+  shape=box;
+  label="Controller channel";
+  node[shape="record"];
+  ACMP1[label="ACMP|<cmd> commands |<rsp> responses"];
+  ADP1[label="{<adp> ADP messages}"];
+  AECP1[label="AECP|<cmd> commands |<rsp> responses"];
+}
+
+subgraph cluster3 {
+  shape=box;
+  label="Controlled channel";
+  node[shape="record"];
+  AECP2[label="AECP|<cmd> commands |<rsp> responses"];
+}
+
+subgraph cluster0 {
+  shape="Mrecord";
+  rank=sink;
+  node[shape=Mrecord];
+  label = "                 AVDECC\n              component";
+  labeljust = r;
+  ACMP
+  ADP[label="<main> ADP|<db> entity\ndatabase"];
+  AECP
+}
+
+network[shape=Mrecord, label="AVB\nnetwork", rank=sink];
+
+
+controller -> AECP1:cmd;
+AECP1:rsp -> controller [constraint=false];
+
+controller -> ACMP1:cmd;
+ACMP1:rsp -> controller [constraint=false];
+
+controller -> ADP1 [dir="both"];
+
+AECP1:cmd -> AECP;
+AECP -> AECP1:rsp [constraint=false];
+
+ACMP1:cmd -> ACMP;
+ACMP -> ACMP1:rsp [constraint=false];
+
+ADP1 -> ADP:db [dir="both"];
+
+
+controlled -> AECP2:rsp;
+AECP2:cmd -> controlled [constraint=false];
+
+media:conn -> streamer [constraint=false];
+media:dis -> streamer [constraint=false];
+streamer -> media [style=invis];
+
+ACMP -> media:conn [constraint=false];
+ACMP -> media:dis [constraint=false];
+
+AECP -> AECP2:cmd [constraint=false];
+AECP2:rsp -> AECP;
+
+AECP -> network [dir="both"];
+ACMP -> network [dir="both"];
+ADP:main -> network [dir="both"];
+
+
+}

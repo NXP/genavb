@@ -1,0 +1,41 @@
+# If KERNELRELEASE is not empty, we are being invoked from the KBuild system
+ifneq ($(KERNELRELEASE),)
+
+GENAVB_INCLUDE?=$(src)/../../include
+
+ccflags-y := -I$(GENAVB_INCLUDE) -I$(GENAVB_INCLUDE)/linux
+
+ifdef CONFIG_AVB_SUPPORT
+obj-m += genavbtsn_net_avb.o
+
+KBUILD_EXTRA_SYMBOLS?=
+
+genavbtsn_net_avb-y = avbdrv.o netdrv.o net_rx.o net_socket.o ipc.o pool.o pool_dma.o net_port.o avtp.o ptp.o mrp.o \
+	queue.o epit.o net_tx.o debugfs.o media.o media_clock.o \
+	media_clock_drv.o media_clock_rec_pll.o media_clock_gen_ptp.o imx-pll.o hw_timer.o pi.o \
+	rational.o gpt.o tpm.o stats.o net_logical_port.o mtimer_drv.o mtimer.o \
+	sr_class.o qos.o
+
+endif # CONFIG_AVB_SUPPORT
+
+obj-m += genavbtsn_ipc.o
+
+genavbtsn_ipc-y = ipc_module.o ipc.o pool.o queue.o
+
+else
+
+ARCH?=arm
+V?=0
+
+INSTALL_ARGS := INSTALL_MOD_PATH=$(PREFIX) INSTALL_MOD_DIR="genavb"
+BUILD_ARGS := CROSS_COMPILE="$(CROSS_COMPILE)" V=$(V) ARCH=$(ARCH)
+
+all: modules
+
+modules clean:
+	$(MAKE) -C $(KERNELDIR) M=`pwd` $@ $(BUILD_ARGS)
+
+modules_install install: modules
+	$(MAKE) -C $(KERNELDIR) M=`pwd` modules_install $(INSTALL_ARGS)
+
+endif # ifneq ($(KERNELRELEASE),)

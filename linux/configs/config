@@ -1,0 +1,32 @@
+#! /bin/sh
+
+# Set following configuration to 1 to start GenAVB automatically at boot time
+CFG_AUTO_START=1
+
+# Set this flag to 1 to synchronize the system clock to the ptp hardware clock
+CFG_USE_PHC2SYS=1
+
+# Set this flag to 1 to launch multiple TSN endpoint processes on two ports
+CFG_TSN_MULTI_ENDPOINTS=0
+
+# Set the GenAVB/TSN configuration mode to use.
+# A configuration mode sets the right config file to be used by the stack.
+# The GENAVB_TSN_CFG_FILE, pointed by the configuration mode, contains the proper configuration for both stack
+# and demo applications.
+
+GENAVB_TSN_CONFIG=1
+
+# GENAVB_TSN_CONFIG 1 - Endpoint TSN
+# GENAVB_TSN_CONFIG 2 - Endpoint AVB
+# GENAVB_TSN_CONFIG 3 - Bridge AVB
+# GENAVB_TSN_CONFIG 4 - Hybrid AVB
+
+GENAVB_TSN_CONFIG_FILE_1=/etc/genavb/config_tsn
+
+GENAVB_TSN_CONFIG_FILE_2=/etc/genavb/config_avb
+
+GENAVB_TSN_CONFIG_FILE_3=/etc/genavb/config_avb_bridge
+
+GENAVB_TSN_CONFIG_FILE_4=/etc/genavb/config_avb_hybrid
+
+eval "GENAVB_TSN_CFG_FILE=\${GENAVB_TSN_CONFIG_FILE_$GENAVB_TSN_CONFIG}"

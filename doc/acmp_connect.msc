@@ -1,0 +1,34 @@
+msc {
+ arcgradient = 0, width = 1600;
+
+ y[label="app",linecolor=maroon,textcolor=maroon], z[label="stack",linecolor=maroon,textcolor=maroon], a[label="app",linecolor=olive,textcolor=olive], b[label="stack",linecolor=olive,textcolor=olive], c[label="stack",linecolor=teal,textcolor=teal], d[label="app",linecolor=teal,textcolor=teal];
+
+ y rbox z [label="Controller", textbgcolour=maroon],
+ a rbox b [label="Listener", textbgcolour=olive],
+ c rbox d [label="Talker", textbgcolour=teal],
+ |||;
+ y:>z [label="CONNECT_RX_COMMAND",linecolor=gray,textcolor=gray, arcskip=1],
+ |||;
+ |||;
+ z->b [label="CONNECT_RX_COMMAND",linecolor=gray,textcolor=gray, arcskip=2];
+ |||;
+ |||;
+ b->c [label="CONNECT_TX_COMMAND", arcskip=2];
+ |||;
+ |||;
+ c:>d [label="MEDIA_STACK_CONNECT", arcskip=5],
+ b<-c [label="CONNECT_TX_RESPONSE", arcskip=2];
+ |||;
+ |||;
+ a<:b [label="MEDIA_STACK_CONNECT", arcskip=5],
+ z<-b [label="CONNECT_RX_RESPONSE",linecolor=gray,textcolor=gray, arcskip=2];
+ |||;
+ |||;
+ y<:z [label="CONNECT_RX_RESPONSE",linecolor=gray,textcolor=gray, arcskip=1];
+ c<:d [label="genavb_stream_create", arcskip=2];
+ |||;
+ |||;
+ a:>b [label="genavb_stream_create", arcskip=2];
+ |||;
+ |||;
+}

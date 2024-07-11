@@ -1,0 +1,5 @@
+#! /bin/sh
+
+## Internal Configurations: Do not change ##
+# Package Type:
+PACKAGE=BRIDGE

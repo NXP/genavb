@@ -1,0 +1,105 @@
+#! /bin/sh
+
+# Set configuration profile to use.
+# A configuration profile is made of two config files (see /etc/genavb/*.cfg)
+# The 1st file APPS_CFG_FILE configures external applications
+# The 2nd file GENAVB_CFG_FILE configures the AVB stack
+# Set PROFILE below to the desired configuration profile
+
+PROFILE=1
+
+# PROFILE 1 - listener alsa
+# PROFILE 2 - AAF audio multistream (file server)
+# PROFILE 3 - Unused
+# PROFILE 4 - talker video
+# PROFILE 5 - listener video btb (video + audio)
+# PROFILE 6 - listener video btb (audio only)
+# PROFILE 7 - audio multistream (file server)
+# PROFILE 8 - audio multistream btb (file server)
+# PROFILE 9 - talker simple
+# PROFILE 10 - listener simple btb
+# PROFILE 11 - listener alsa btb
+# PROFILE 12 - listener video static stream camera (MJPEG or H264)
+# PROFILE 13 - AVNU
+# PROFILE 14 - CRF master audio multistream (alsa)
+# PROFILE 15 - CRF slave audio multistream btb (alsa)
+# PROFILE 16 - listener video H264 btb
+# PROFILE 17 - talker ACF
+# PROFILE 18 - listener ACF
+# PROFILE 19 - audio talker/listener with multi format streams
+# PROFILE 20 - talker simple (Milan mode)
+# PROFILE 21 - listener alsa (Milan mode)
+# PROFILE 22 - live audio talker/listener with CRF (Milan mode)
+
+APPS_CFG_FILE_1=/etc/genavb/apps-listener-alsa.cfg
+GENAVB_CFG_FILE_1=/etc/genavb/genavb-listener.cfg
+
+APPS_CFG_FILE_2=/etc/genavb/apps-listener-talker-multi.cfg
+GENAVB_CFG_FILE_2=/etc/genavb/genavb-audio-multi-aaf.cfg
+
+APPS_CFG_FILE_4=/etc/genavb/apps-talker-video.cfg
+GENAVB_CFG_FILE_4=/etc/genavb/genavb-talker-video.cfg
+
+APPS_CFG_FILE_5=/etc/genavb/apps-listener-video.cfg
+GENAVB_CFG_FILE_5=/etc/genavb/genavb-listener-video-btb.cfg
+
+APPS_CFG_FILE_6=/etc/genavb/apps-listener-audio.cfg
+GENAVB_CFG_FILE_6=/etc/genavb/genavb-listener-btb.cfg
+
+APPS_CFG_FILE_7=/etc/genavb/apps-listener-talker-multi.cfg
+GENAVB_CFG_FILE_7=/etc/genavb/genavb-audio-multi.cfg
+
+APPS_CFG_FILE_8=/etc/genavb/apps-listener-talker-multi.cfg
+GENAVB_CFG_FILE_8=/etc/genavb/genavb-audio-multi-btb.cfg
+
+APPS_CFG_FILE_9=/etc/genavb/apps-talker-simple.cfg
+GENAVB_CFG_FILE_9=/etc/genavb/genavb-talker-simple.cfg
+
+APPS_CFG_FILE_10=/etc/genavb/apps-listener-simple.cfg
+GENAVB_CFG_FILE_10=/etc/genavb/genavb-listener-btb.cfg
+
+APPS_CFG_FILE_11=/etc/genavb/apps-listener-alsa.cfg
+GENAVB_CFG_FILE_11=/etc/genavb/genavb-listener-btb.cfg
+
+APPS_CFG_FILE_12=/etc/genavb/apps-listener-video-camera.cfg
+GENAVB_CFG_FILE_12=/etc/genavb/genavb-listener-video-camera.cfg
+
+APPS_CFG_FILE_13=/etc/genavb/apps-avnu.cfg
+GENAVB_CFG_FILE_13=/etc/genavb/genavb-avnu.cfg
+
+APPS_CFG_FILE_14=/etc/genavb/apps-media-master.cfg
+GENAVB_CFG_FILE_14=/etc/genavb/genavb-audio-multi-aaf.cfg
+
+APPS_CFG_FILE_15=/etc/genavb/apps-media-slave.cfg
+GENAVB_CFG_FILE_15=/etc/genavb/genavb-audio-multi-btb-aaf.cfg
+
+APPS_CFG_FILE_16=/etc/genavb/apps-listener-video.cfg
+GENAVB_CFG_FILE_16=/etc/genavb/genavb-listener-video-h264-btb.cfg
+
+APPS_CFG_FILE_17=/etc/genavb/apps-talker-simple-acf.cfg
+GENAVB_CFG_FILE_17=/etc/genavb/genavb-talker-simple-acf.cfg
+
+APPS_CFG_FILE_18=/etc/genavb/apps-listener-simple-acf.cfg
+GENAVB_CFG_FILE_18=/etc/genavb/genavb-listener-acf.cfg
+
+APPS_CFG_FILE_19=/etc/genavb/apps-listener-talker-multi-format.cfg
+GENAVB_CFG_FILE_19=/etc/genavb/genavb-audio-multi-format.cfg
+
+APPS_CFG_FILE_20=/etc/genavb/apps-talker-simple-aaf.cfg
+GENAVB_CFG_FILE_20=/etc/genavb/genavb-talker-milan.cfg
+
+APPS_CFG_FILE_21=/etc/genavb/apps-listener-alsa-milan.cfg
+GENAVB_CFG_FILE_21=/etc/genavb/genavb-listener-milan.cfg
+
+APPS_CFG_FILE_22=/etc/genavb/apps-media-listener-talker.cfg
+GENAVB_CFG_FILE_22=/etc/genavb/genavb-listener-talker-milan.cfg
+
+eval "APPS_CFG_FILE=\${APPS_CFG_FILE_$PROFILE}"
+eval "GENAVB_CFG_FILE=\${GENAVB_CFG_FILE_$PROFILE}"
+
+## Internal Configurations: Do not change ##
+# Network Sockets Mode:
+AVB_MODE=1
+
+# Package Type:
+PACKAGE=ENDPOINT
