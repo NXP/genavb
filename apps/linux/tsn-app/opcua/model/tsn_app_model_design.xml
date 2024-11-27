@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ModelDesign
+        xmlns:uax="http://opcfoundation.org/UA/2008/02/Types.xsd"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ua="http://opcfoundation.org/UA/"
+        xmlns:TSN="https://opcua/UA/Tsn/"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        TargetNamespace="https://opcua/UA/Tsn/"
+        TargetXmlNamespace="https://opcua/UA/Tsn/"
+        TargetVersion="0.9.0"
+        TargetPublicationDate="2019-04-01T00:00:00Z"
+        xmlns="http://opcfoundation.org/UA/ModelDesign.xsd">
+
+    <Namespaces>
+        <Namespace Name="TsnApp" Prefix="TsnApp" XmlNamespace="https://opcua/UA/Tsn/Types.xsd" XmlPrefix="Tsn">https://opcua/UA/Tsn/</Namespace>
+        <Namespace Name="OpcUa" Version="1.03" PublicationDate="2013-12-02T00:00:00Z" Prefix="Opc.Ua" InternalPrefix="Opc.Ua.Server" XmlNamespace="http://opcfoundation.org/UA/2008/02/Types.xsd" XmlPrefix="OpcUa">http://opcfoundation.org/UA/</Namespace>
+    </Namespaces>
+
+<!-- ### Reference Types ###-->
+
+    <!-- ### Object Types ###-->
+
+    <!-- StatsType with mandatory parameters -->
+    <ObjectType SymbolicName="TSN:StatsType" BaseType="ua:BaseObjectType" IsAbstract="false" SupportsEvents="true">
+        <Description>Base type for all statistics</Description>
+        <Children>
+            <Variable SymbolicName="TSN:Min" DataType="ua:Int32" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Minimum of the values</Description>
+            </Variable>
+            <Variable SymbolicName="TSN:Mean" DataType="ua:Int32" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Mean of the values</Description>
+            </Variable>
+            <Variable SymbolicName="TSN:Max" DataType="ua:Int32" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Maximum of the values</Description>
+            </Variable>
+            <Variable SymbolicName="TSN:AbsMax" DataType="ua:Int32" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Absolute maximum of the values</Description>
+            </Variable>
+            <Variable SymbolicName="TSN:AbsMin" DataType="ua:Int32" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Absolute minimum of the values</Description>
+            </Variable>
+            <Variable SymbolicName="TSN:Ms" DataType="ua:UInt64" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Mean square of the values</Description>
+            </Variable>
+            <Variable SymbolicName="TSN:Variance" DataType="ua:UInt64" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Variance of the values</Description>
+            </Variable>
+        </Children>
+    </ObjectType>
+
+    <!-- HistogramType with mandatory parameters -->
+    <ObjectType SymbolicName="TSN:HistogramType" BaseType="ua:BaseObjectType" IsAbstract="false" SupportsEvents="true">
+        <Description>Base type for all histograms </Description>
+        <Children>
+            <Variable SymbolicName="TSN:NSlots" DataType="ua:UInt32" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Number of slots</Description>
+            </Variable>
+            <Variable SymbolicName="TSN:SlotSize" DataType="ua:UInt32" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Slot size</Description>
+            </Variable>
+            <Variable SymbolicName="TSN:Slots" DataType="ua:UInt32" ValueRank="Array" ModellingRule="Mandatory">
+                <Description>Array for the repartition of the values</Description>
+            </Variable>
+        </Children>
+    </ObjectType>
+
+    <!-- ConfigurationType with mandatory parameters -->
+    <ObjectType SymbolicName="TSN:ConfigurationType" BaseType="ua:BaseObjectType" IsAbstract="false" SupportsEvents="true">
+        <Description>Base type for the app configuration</Description>
+        <Children>
+            <Property SymbolicName="TSN:Role" DataType="ua:String" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Role of the endpoint : controller or io_device</Description>
+            </Property>
+            <Property SymbolicName="TSN:NumPeers" DataType="ua:UInt64" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Number of peers</Description>
+            </Property>
+        </Children>
+    </ObjectType>
+
+    <!-- TaskStatsType with mandatory parameters -->
+    <ObjectType SymbolicName="TSN:TaskStatsType" BaseType="ua:BaseObjectType" IsAbstract="false" SupportsEvents="true">
+        <Description>Statistics of the task</Description>
+        <Children>
+            <Variable SymbolicName="TSN:Sched" DataType="ua:UInt32" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Sched</Description>
+            </Variable>
+            <Variable SymbolicName="TSN:SchedEarly" DataType="ua:UInt32" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>SchedEarly</Description>
+            </Variable>
+            <Variable SymbolicName="TSN:SchedLate" DataType="ua:UInt32" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>SchedLate</Description>
+            </Variable>
+            <Variable SymbolicName="TSN:SchedMissed" DataType="ua:UInt32" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>SchedMissed</Description>
+            </Variable>
+            <Variable SymbolicName="TSN:SchedTimeout" DataType="ua:UInt32" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>SchedTimeout</Description>
+            </Variable>
+            <Variable SymbolicName="TSN:ClockDiscount" DataType="ua:UInt32" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>ClockDiscount</Description>
+            </Variable>
+            <Variable SymbolicName="TSN:ClockErr" DataType="ua:UInt32" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>ClockErr</Description>
+            </Variable>
+            <Object SymbolicName="TSN:SchedErrStats" TypeDefinition="TSN:StatsType" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>SchedErrStats</Description>
+            </Object>
+            <Object SymbolicName="TSN:SchedErrHisto" TypeDefinition="TSN:HistogramType" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>SchedErrHisto</Description>
+            </Object>
+            <Object SymbolicName="TSN:ProcTimeStats" TypeDefinition="TSN:StatsType" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Processing time statistics</Description>
+            </Object>
+            <Object SymbolicName="TSN:ProcTimeHisto" TypeDefinition="TSN:HistogramType" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Processing time histogram</Description>
+            </Object>
+            <Object SymbolicName="TSN:TotalTimeStats" TypeDefinition="TSN:StatsType" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Total time statistics</Description>
+            </Object>
+            <Object SymbolicName="TSN:TotalTimeHisto" TypeDefinition="TSN:HistogramType" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Total time histogram</Description>
+            </Object>
+        </Children>
+    </ObjectType>
+
+    <!-- CyclicRxSocketType with mandatory parameters -->
+    <ObjectType SymbolicName="TSN:CyclicRxSocketType" BaseType="ua:BaseObjectType" IsAbstract="false" SupportsEvents="true">
+        <Description>Application level socket</Description>
+        <Children>
+            <Variable SymbolicName="TSN:PeerId" DataType="ua:Int32" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Peer identifier</Description>
+            </Variable>
+            <Variable SymbolicName="TSN:ValidFrames" DataType="ua:UInt32" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Number of valid frames</Description>
+            </Variable>
+            <Variable SymbolicName="TSN:ErrId" DataType="ua:UInt32" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Error parameter</Description>
+            </Variable>
+            <Variable SymbolicName="TSN:ErrTs" DataType="ua:UInt32" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Error parameter</Description>
+            </Variable>
+            <Variable SymbolicName="TSN:ErrUnderflow" DataType="ua:UInt32" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Error parameter</Description>
+            </Variable>
+            <Variable SymbolicName="TSN:Link" DataType="ua:String" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Link up or down</Description>
+            </Variable>
+            <Object SymbolicName="TSN:TrafficLatencyStats" TypeDefinition="TSN:StatsType" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Traffic latency statistics</Description>
+            </Object>
+            <Object SymbolicName="TSN:TrafficLatencyHisto" TypeDefinition="TSN:HistogramType" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Traffic latency histogram</Description>
+            </Object>
+        </Children>
+    </ObjectType>
+
+    <!-- NetworkSocketType with mandatory parameters -->
+    <ObjectType SymbolicName="TSN:NetworkSocketType" BaseType="ua:BaseObjectType" IsAbstract="false" SupportsEvents="true">
+        <Description>Frames from low-level network socket</Description>
+        <Children>
+            <Variable SymbolicName="TSN:Direction" DataType="ua:String" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Rx or tx</Description>
+            </Variable>
+            <Variable SymbolicName="TSN:Id" DataType="ua:Int32" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Identifier</Description>
+            </Variable>
+            <Variable SymbolicName="TSN:Frames" DataType="ua:UInt32" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Frames number</Description>
+            </Variable>
+            <Variable SymbolicName="TSN:FramesErr" DataType="ua:UInt32" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Frames errors number</Description>
+            </Variable>
+        </Children>
+    </ObjectType>
+
+    <!-- SocketStatsType with mandatory parameters -->
+    <ObjectType SymbolicName="TSN:SocketStatsType" BaseType="ua:BaseObjectType" IsAbstract="false" SupportsEvents="true">
+        <Description>Base type for all the sockets</Description>
+        <Children>
+            <Object SymbolicName="TSN:CyclicRxSocket0" TypeDefinition="TSN:CyclicRxSocketType" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>CyclicRxSocket0</Description>
+            </Object>
+            <Object SymbolicName="TSN:CyclicRxSocket1" TypeDefinition="TSN:CyclicRxSocketType" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>CyclicRxSocket1</Description>
+            </Object>
+            <Object SymbolicName="TSN:NetRxSocket0" TypeDefinition="TSN:NetworkSocketType" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>NetRxSocket0</Description>
+            </Object>
+            <Object SymbolicName="TSN:NetRxSocket1" TypeDefinition="TSN:NetworkSocketType" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>NetRxSocket1</Description>
+            </Object>
+            <Object SymbolicName="TSN:NetTxSocket0" TypeDefinition="TSN:NetworkSocketType" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>NetTxSocket0</Description>
+            </Object>
+        </Children>
+    </ObjectType>
+
+    <!-- TsnAppType with mandatory parameters -->
+    <ObjectType SymbolicName="TSN:TsnAppType" BaseType="ua:BaseObjectType" IsAbstract="false" SupportsEvents="true">
+        <Description>Base type for tsn_app</Description>
+        <Children>
+            <Object SymbolicName="TSN:Configuration" TypeDefinition="TSN:ConfigurationType" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Configuration for the app</Description>
+            </Object>
+            <Object SymbolicName="TSN:SocketStats" TypeDefinition="TSN:SocketStatsType" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Statistics for the sockets</Description>
+            </Object>
+            <Object SymbolicName="TSN:TaskStats" TypeDefinition="TSN:TaskStatsType" ValueRank="Scalar" ModellingRule="Mandatory">
+                <Description>Statistics</Description>
+            </Object>
+        </Children>
+    </ObjectType>
+
+<!-- ### Objects - Instantiation ###-->
+    <Object SymbolicName="TSN:TsnApp" TypeDefinition="TSN:TsnAppType">
+        <Description>TsnApp object</Description>
+        <References>
+            <Reference IsInverse="true">
+                <ReferenceType>ua:Organizes</ReferenceType>
+                <TargetId>ua:ObjectsFolder</TargetId>
+            </Reference>
+        </References>
+    </Object>
+
+</ModelDesign>
+   

@@ -1,0 +1,21 @@
+#! /bin/sh
+
+# Set configuration profile to use.
+# A configuration profile is made of a single configuration file:
+# The file APPS_CFG_FILE configures external applications
+# Set PROFILE below to the desired configuration profile
+
+PROFILE=1
+
+# PROFILE 1 - TSN application controller
+# PROFILE 2 - TSN application IO device
+
+APPS_CFG_FILE_1=/etc/genavb/apps-tsn-network-controller.cfg
+
+APPS_CFG_FILE_2=/etc/genavb/apps-tsn-network-iodevice.cfg
+
+eval "APPS_CFG_FILE=\${APPS_CFG_FILE_$PROFILE}"
+
+## Internal Configurations: Do not change ##
+# Package Type:
+PACKAGE=ENDPOINT

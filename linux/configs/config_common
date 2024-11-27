@@ -1,0 +1,92 @@
+#! /bin/sh
+
+# Common configuration for all GenAVB/TSN uses cases and scripts
+
+#########################################################################################
+#                   Priority to Qos Mapping                                             #
+#########################################################################################
+
+# PCP mapping (802.1Q Table 8-5, no SR Class, 5 traffic classes):
+#    * prio {0, 1}                    -> TC 0
+#    * prio {2, 3}                    -> TC 1
+#    * prio {4, 5 (tsn app traffic)}  -> TC 2
+#    * prio 6 (gptp/srp traffic)      -> TC 3
+#    * prio 7                         -> TC 4
+PCP_TO_QOS_MAP_5TC_0SR="0 0 1 1 2 2 3 4"
+
+# PCP mapping (802.1Q Table 8-5, no SR Class, 6 traffic classes):
+#    * prio {0}                       -> TC 1
+#    * prio {1}                       -> TC 0
+#    * prio {2, 3}                    -> TC 2
+#    * prio {4, 5 (tsn app traffic)}  -> TC 3
+#    * prio 6 (gptp/srp traffic)      -> TC 4
+#    * prio 7                         -> TC 5
+PCP_TO_QOS_MAP_6TC_0SR="1 0 2 2 3 3 4 5"
+
+# PCP mapping (802.1Q Table 34-1, Two SR Class, 8 traffic classes):
+PCP_TO_QOS_MAP_8TC_2SR="1 0 6 7 2 3 4 5"
+
+#########################################################################################
+#                   Process/Tasks CPU partitioning                                      #
+#########################################################################################
+
+# Single core platforms: all pinned to CPU#0
+TSN_APP_CORE_1C=0
+TSN_MODE_TSN_STACK_CORE_1C=0
+AVB_MODE_TSN_STACK_CORE_1C=0
+AVB_STACK_CORE_1C=0
+AVB_APP_CORE_1C=0
+
+# Dual core platforms:
+# AVB usecase:
+#    - TSN process: CORE#1
+#    - AVB process: CORE#1
+#    - APP process: CORE#0
+# TSN usecase:
+#    - TSN process: CORE#1
+#    - APP process: CORE#0
+AVB_MODE_TSN_STACK_CORE_2C=1
+AVB_STACK_CORE_2C=1
+AVB_APP_CORE_2C=0
+TSN_APP_CORE_2C=0
+TSN_MODE_TSN_STACK_CORE_2C=1
+
+# Platforms with cores greater than 2:
+# AVB usecase:
+#    - TSN process: CORE#1
+#    - AVB process: CORE#1
+#    - APP process: CORE#2
+# TSN usecase:
+#    - TSN process: CORE#1
+#    - APP process: CORE#2
+AVB_MODE_TSN_STACK_CORE_GT2C=1
+AVB_STACK_CORE_GT2C=1
+AVB_APP_CORE_GT2C=2
+TSN_APP_CORE_GT2C=2
+TSN_MODE_TSN_STACK_CORE_GT2C=1
+
+#########################################################################################
+#                   GenAVB/TSN Network configuration                                    #
+#########################################################################################
+
+# TSN packets configuration
+# !!!Don't change, must be kept aligned with application and GenAVB/TSN stack C source code
+
+TSN_TRAFFIC_VLAN_ID=2 # Using VID=2
+TSN_TRAFFIC_PRIO=5 # PCP value in vlan tag
+GPTP_TRAFFIC_PRIO=6 # SO_PRIORITY value for standard sockets
+
+GPTP_DST_MAC="01:80:c2:00:00:0e"
+TSN_CONTROLLER_TRAFFIC_DST_MAC="91:e0:f0:00:fe:71"
+TSN_IODEVICE1_TRAFFIC_DST_MAC="91:e0:f0:00:fe:70"
+TSN_IODEVICE2_TRAFFIC_DST_MAC="91:e0:f0:00:fe:80"
+
+#########################################################################################
+#                   Platform-specific configurations                                    #
+#########################################################################################
+
+# Number of HW RX/TX Queues on i.MX 95 EVK
+IMX95EVK_TSN_ENDPOINT_NUM_TC=6
+
+# Number of HW RX/TX Queues on all i.MX boards (i.MX 8 and i.MX 93) using Enet QoS
+ENETQOS_TSN_ENDPOINT_NUM_TC=5

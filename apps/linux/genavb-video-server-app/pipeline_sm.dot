@@ -1,0 +1,27 @@
+graph "pipeline state machine"
+{
+STARTING;
+STARTED;
+STOPPED;
+LOOP;
+ALL_STOPPED1 [label="All stopped?", shape=diamond];
+ALL_STOPPED2 [label="All stopped?", shape=diamond];
+ALL_LOOPING [label="All looping?", shape=diamond];
+TIMEOUT [label="Timeout?", shape=diamond];
+
+
+STARTING -- STARTED [dir=forward];
+STARTED -- ALL_STOPPED1 [label="STOP", dir=forward, arrowhead=normal];
+ALL_STOPPED1 -- STARTED [label="No", dir=forward, arrowhead=normal];
+ALL_STOPPED1 -- STOPPED [label="Yes", dir=forward, arrowhead=normal];
+STARTED -- ALL_LOOPING [label="LOOP", dir=forward, arrowhead=normal];
+ALL_LOOPING -- STARTED [label="No", dir=forward, arrowhead=normal];
+ALL_LOOPING -- LOOP    [label="Yes", dir=forward, arrowhead=normal];
+STOPPED -- STARTING [label="START", dir=forward];
+LOOP -- TIMEOUT [label="TIMER", dir=forward];
+TIMEOUT -- LOOP [label="No", dir=forward, arrowhead=normal];
+TIMEOUT -- STARTING [label="Yes", dir=forward, arrowhead=normal];
+LOOP -- ALL_STOPPED2 [label="STOP", dir=forward];
+ALL_STOPPED2 -- LOOP [label="No", dir=forward, arrowhead=normal];
+ALL_STOPPED2 -- STOPPED [label="Yes", dir=forward, arrowhead=normal];
+}

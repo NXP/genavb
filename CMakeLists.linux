@@ -1,0 +1,51 @@
+option(BUILD_KERNEL_MODULE "Build kernel module" ON)
+option(BUILD_APPS "Build example applications" ON)
+
+set(modules_obj_dir ${CMAKE_BINARY_DIR}/modules)
+
+set(modules_extra_flags
+  MAKEFLAGS=
+  KERNELDIR=${KERNELDIR}
+  GENAVB_INCLUDE=${TOPDIR}/include
+  MODULES_OBJ_DIR=${modules_obj_dir}
+  GENAVB_ROOT_DIR=${TOPDIR}
+  target=${TARGET}
+  config=${CONFIG}
+  PREFIX="\$ENV{DESTDIR}/${CMAKE_INSTALL_PREFIX}"
+)
+
+add_custom_target(modules-dir
+  COMMAND $(MAKE) -C ${CMAKE_SOURCE_DIR}/linux/modules modules_sources
+  ${modules_extra_flags}
+  COMMENT "Generate modules src files"
+)
+
+if(${CMAKE_VERSION} VERSION_LESS "3.15.0")
+  set_property(DIRECTORY PROPERTY ADDITIONAL_MAKE_CLEAN_FILES ${modules_obj_dir})
+else()
+  set_property(TARGET modules-dir APPEND PROPERTY ADDITIONAL_CLEAN_FILES ${modules_obj_dir})
+endif()
+
+if(BUILD_KERNEL_MODULE)
+
+add_custom_target(modules ALL
+  COMMAND $(MAKE) -C ${CMAKE_SOURCE_DIR}/linux/modules modules
+  ${modules_extra_flags}
+  DEPENDS modules-dir
+  COMMENT "Building modules"
+)
+
+add_custom_target(modules-install
+  COMMAND $(MAKE) -C ${CMAKE_SOURCE_DIR}/linux/modules modules_install
+  ${modules_extra_flags}
+  DEPENDS modules-dir
+  COMMENT "Installing modules"
+)
+
+install(CODE "execute_process(COMMAND make -C ${CMAKE_SOURCE_DIR}/linux/modules modules_install ${modules_extra_flags})")
+
+endif()
+
+if(BUILD_APPS)
+add_subdirectory(${CMAKE_SOURCE_DIR}/apps/linux)
+endif()
