@@ -76,13 +76,17 @@ get_one2one_hw_queues_mapping()
 		echo ""
 	elif [ "$num_q" -eq 1 ]; then
 		echo "${hw_queues_mapping}"
+	else
+
+		# hardware queues are 0-indexed
+		last_num_q=$((num_q - 1))
+
+		for q in $(seq 1 "$last_num_q"); do
+			hw_queues_mapping="${hw_queues_mapping} 1@$q"
+		done
+
+		echo "${hw_queues_mapping}"
 	fi
-
-	for q in $(seq 1 "$num_q"); do
-		hw_queues_mapping="${hw_queues_mapping} 1@$q"
-	done
-
-	echo "${hw_queues_mapping}"
 }
 
 # Wait for a file creation with a timeout

@@ -98,7 +98,7 @@ set_machine_variables()
 		# NXP i.MX8MPlus EVK Board
 		if [ "$AVB_MODE" -eq 1 ]; then
 			IRQ_DMA_NAME="dma-controller"
-			IRQ_TIMER_NAME="gpt"
+			IRQ_TIMER_NAME="302d.*timer"
 			IRQ_ETH_NAME="ethernet"
 			SND_SOC_CARD_NAME="wm8960-audio"
 			CFG_EXTERNAL_CONTROLS_APP_OPT="-m Headphone"
