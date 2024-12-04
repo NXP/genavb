@@ -81,8 +81,8 @@ static int fqtss_std_set_oper_idle_slope(unsigned int port_id, uint8_t traffic_c
 	}
 
 	/* idleslope and sendslope in kbits per sec */
-	cbs_opt.idleslope = idle_slope / 1000; /* idleslope in kbits per sec */
-	cbs_opt.sendslope = cbs_opt.idleslope - port_rate * 1000;
+	cbs_opt.idleslope = idle_slope / 1000;
+	cbs_opt.sendslope = cbs_opt.idleslope - (int32_t)(port_rate / 1000);
 
 	rtnetlink_nlmsghdr_init(&req.nh, NLMSG_LENGTH(sizeof(struct tcmsg)), RTM_NEWQDISC, NLM_F_REQUEST | NLM_F_REPLACE);
 

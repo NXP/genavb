@@ -1,7 +1,7 @@
 NXP Software Content Register
 
 Release Name:           genavb-sdk
-Version:                GenAVB/TSN 6_5_1
+Version:                GenAVB/TSN 6_5_2
 Date Created:           December-2024
 Release Location:       https://github.com/NXP/GenAVB_TSN
 Description:            GenAVB/TSN protocol stack for NXP MPUs and MCUs processors
