@@ -19,6 +19,7 @@ and their status for this specific release:
 | `linux i.MX6ULL`       | `i.MX 6ULL`                                    |    **O**     |              |                |            |
 | `linux i.MX8`          | `i.MX 8MM`                                     |    **O**     |              |                |            |
 | `linux i.MX8`          | `i.MX 8MP`, `i.MX 8DXL`, `i.MX 93`             |    **O**     |    **O**     |                |            |
+| `linux i.MX8`          | `i.MX 95`                                      |              |    **O**     |                |            |
 | `linux i.MX8`          | `i.MX 8DXL + SJA1105Q`                         |              |              |      **O**     |            |
 | `linux i.MX8`          | `i.MX 93 + SJA1105Q`                           |              |              |      **O**     |   **O**    |
 | `linux LS1028`         | `LS1028A`                                      |              |              |      **O**     |            |
